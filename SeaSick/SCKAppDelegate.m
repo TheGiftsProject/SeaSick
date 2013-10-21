@@ -7,14 +7,16 @@
 //
 
 #import "SCKAppDelegate.h"
+#import "Services/SCKSocketDelegate.h"
 
 @implementation SCKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  
     return YES;
-}
+}1
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

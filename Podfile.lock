@@ -19,11 +19,14 @@ PODS:
   - AFNetworking/Serialization (2.0.1)
   - AFNetworking/UIKit (2.0.1):
     - AFNetworking/NSURLConnection
+  - SocketRocket (0.3.1-beta2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - SocketRocket (= 0.3.1-beta2)
 
 SPEC CHECKSUMS:
   AFNetworking: a6f11ac4ac087303e6ff87adc1ba57b0dac20ef8
+  SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
 
 COCOAPODS: 0.25.0
