@@ -1,1164 +1,532 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>07C9EF25F486480D817042CA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>18802F3BB9A14C048A048E99</key>
-		<dict>
-			<key>fileRef</key>
-			<string>46C79096DAA940E7A5AB074A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>46C79096DAA940E7A5AB074A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>6BB35DB688CC4EA5A4344B4D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0B11815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0C51815479800E7F595</string>
-				<string>94DBE0E91815479800E7F595</string>
-				<string>94DBE0BC1815479800E7F595</string>
-				<string>94DBE0BB1815479800E7F595</string>
-				<string>C71AE5989D7F498092069E6E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0B21815479800E7F595</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>SCK</string>
-				<key>LastUpgradeCheck</key>
-				<string>0500</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>94DBE0E11815479800E7F595</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>94DBE0B91815479800E7F595</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>94DBE0B51815479800E7F595</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>94DBE0B11815479800E7F595</string>
-			<key>productRefGroup</key>
-			<string>94DBE0BB1815479800E7F595</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>94DBE0B91815479800E7F595</string>
-				<string>94DBE0E11815479800E7F595</string>
-			</array>
-		</dict>
-		<key>94DBE0B51815479800E7F595</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>94DBE0F11815479800E7F595</string>
-				<string>94DBE0F21815479800E7F595</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>94DBE0B61815479800E7F595</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>94DBE0D91815479800E7F595</string>
-				<string>94DBE0D01815479800E7F595</string>
-				<string>94DBE0CC1815479800E7F595</string>
-				<string>94DBE0D61815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0B71815479800E7F595</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>94DBE0C01815479800E7F595</string>
-				<string>94DBE0C21815479800E7F595</string>
-				<string>94DBE0C41815479800E7F595</string>
-				<string>94DBE0BE1815479800E7F595</string>
-				<string>18802F3BB9A14C048A048E99</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0B81815479800E7F595</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>94DBE0CA1815479800E7F595</string>
-				<string>94DBE0DD1815479800E7F595</string>
-				<string>94DBE0DB1815479800E7F595</string>
-				<string>94DBE0D31815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0B91815479800E7F595</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>94DBE0F31815479800E7F595</string>
-			<key>buildPhases</key>
-			<array>
-				<string>07C9EF25F486480D817042CA</string>
-				<string>94DBE0B61815479800E7F595</string>
-				<string>94DBE0B71815479800E7F595</string>
-				<string>94DBE0B81815479800E7F595</string>
-				<string>6BB35DB688CC4EA5A4344B4D</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SeaSick</string>
-			<key>productName</key>
-			<string>SeaSick</string>
-			<key>productReference</key>
-			<string>94DBE0BA1815479800E7F595</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>94DBE0BA1815479800E7F595</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SeaSick.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>94DBE0BB1815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0BA1815479800E7F595</string>
-				<string>94DBE0E21815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0BC1815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0BD1815479800E7F595</string>
-				<string>94DBE0BF1815479800E7F595</string>
-				<string>94DBE0C11815479800E7F595</string>
-				<string>94DBE0C31815479800E7F595</string>
-				<string>94DBE0E31815479800E7F595</string>
-				<string>46C79096DAA940E7A5AB074A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0BD1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>94DBE0BE1815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0BD1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0BF1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>94DBE0C01815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0BF1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0C11815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>94DBE0C21815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0C11815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0C31815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SpriteKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/SpriteKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>94DBE0C41815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0C31815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0C51815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0CE1815479800E7F595</string>
-				<string>94DBE0CF1815479800E7F595</string>
-				<string>94DBE0D11815479800E7F595</string>
-				<string>94DBE0D41815479800E7F595</string>
-				<string>94DBE0D51815479800E7F595</string>
-				<string>94DBE0D71815479800E7F595</string>
-				<string>94DBE0D81815479800E7F595</string>
-				<string>94DBE0DA1815479800E7F595</string>
-				<string>94DBE0DC1815479800E7F595</string>
-				<string>94DBE0C61815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SeaSick</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0C61815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0C71815479800E7F595</string>
-				<string>94DBE0C81815479800E7F595</string>
-				<string>94DBE0CB1815479800E7F595</string>
-				<string>94DBE0CD1815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0C71815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>SeaSick-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0C81815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0C91815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0C91815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0CA1815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0C81815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0CB1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0CC1815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0CB1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0CD1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SeaSick-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0CE1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SCKAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0CF1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SCKAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D01815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0CF1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0D11815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0D21815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D21815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D31815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0D11815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0D41815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SCKViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D51815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SCKViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D61815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0D51815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0D71815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SCKMyScene.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D81815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SCKMyScene.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0D91815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0D81815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0DA1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Spaceship.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0DB1815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0DA1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0DC1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0DD1815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0DC1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0DE1815479800E7F595</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>94DBE0F01815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0DF1815479800E7F595</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>94DBE0E41815479800E7F595</string>
-				<string>94DBE0E61815479800E7F595</string>
-				<string>94DBE0E51815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0E01815479800E7F595</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>94DBE0EE1815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>94DBE0E11815479800E7F595</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>94DBE0F61815479800E7F595</string>
-			<key>buildPhases</key>
-			<array>
-				<string>94DBE0DE1815479800E7F595</string>
-				<string>94DBE0DF1815479800E7F595</string>
-				<string>94DBE0E01815479800E7F595</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>94DBE0E81815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SeaSickTests</string>
-			<key>productName</key>
-			<string>SeaSickTests</string>
-			<key>productReference</key>
-			<string>94DBE0E21815479800E7F595</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>94DBE0E21815479800E7F595</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SeaSickTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>94DBE0E31815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>94DBE0E41815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0E31815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0E51815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0BD1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0E61815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0C11815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0E71815479800E7F595</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>94DBE0B21815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>94DBE0B91815479800E7F595</string>
-			<key>remoteInfo</key>
-			<string>SeaSick</string>
-		</dict>
-		<key>94DBE0E81815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>94DBE0B91815479800E7F595</string>
-			<key>targetProxy</key>
-			<string>94DBE0E71815479800E7F595</string>
-		</dict>
-		<key>94DBE0E91815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0EF1815479800E7F595</string>
-				<string>94DBE0EA1815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SeaSickTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0EA1815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0EB1815479800E7F595</string>
-				<string>94DBE0EC1815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0EB1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>SeaSickTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0EC1815479800E7F595</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>94DBE0ED1815479800E7F595</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0ED1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0EE1815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0EC1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0EF1815479800E7F595</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SeaSickTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94DBE0F01815479800E7F595</key>
-		<dict>
-			<key>fileRef</key>
-			<string>94DBE0EF1815479800E7F595</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>94DBE0F11815479800E7F595</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>94DBE0F21815479800E7F595</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>94DBE0F31815479800E7F595</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>94DBE0F41815479800E7F595</string>
-				<string>94DBE0F51815479800E7F595</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>94DBE0F41815479800E7F595</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>C71AE5989D7F498092069E6E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>SeaSick/SeaSick-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SeaSick/SeaSick-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SPRITEKIT_TEXTURE_ATLAS_OUTPUT</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>94DBE0F51815479800E7F595</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>C71AE5989D7F498092069E6E</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>SeaSick/SeaSick-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SeaSick/SeaSick-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SPRITEKIT_TEXTURE_ATLAS_OUTPUT</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>94DBE0F61815479800E7F595</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>94DBE0F71815479800E7F595</string>
-				<string>94DBE0F81815479800E7F595</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>94DBE0F71815479800E7F595</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/SeaSick.app/SeaSick</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>SeaSick/SeaSick-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>SeaSickTests/SeaSickTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>94DBE0F81815479800E7F595</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/SeaSick.app/SeaSick</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>SeaSick/SeaSick-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SeaSickTests/SeaSickTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>C71AE5989D7F498092069E6E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>94DBE0B21815479800E7F595</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18802F3BB9A14C048A048E99 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C79096DAA940E7A5AB074A /* libPods.a */; };
+		94DBE0BE1815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
+		94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BF1815479800E7F595 /* CoreGraphics.framework */; };
+		94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
+		94DBE0C41815479800E7F595 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C31815479800E7F595 /* SpriteKit.framework */; };
+		94DBE0CA1815479800E7F595 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0C81815479800E7F595 /* InfoPlist.strings */; };
+		94DBE0CC1815479800E7F595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CB1815479800E7F595 /* main.m */; };
+		94DBE0D01815479800E7F595 /* SCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */; };
+		94DBE0D31815479800E7F595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0D11815479800E7F595 /* Main.storyboard */; };
+		94DBE0D61815479800E7F595 /* SCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D51815479800E7F595 /* SCKViewController.m */; };
+		94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D81815479800E7F595 /* SCKMyScene.m */; };
+		94DBE0DD1815479800E7F595 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0DC1815479800E7F595 /* Images.xcassets */; };
+		94DBE0E41815479800E7F595 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0E31815479800E7F595 /* XCTest.framework */; };
+		94DBE0E51815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
+		94DBE0E61815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
+		94DBE0EE1815479800E7F595 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0EC1815479800E7F595 /* InfoPlist.strings */; };
+		94DBE0F01815479800E7F595 /* SeaSickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0EF1815479800E7F595 /* SeaSickTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		94DBE0E71815479800E7F595 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94DBE0B21815479800E7F595 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94DBE0B91815479800E7F595;
+			remoteInfo = SeaSick;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		46C79096DAA940E7A5AB074A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DBE0BA1815479800E7F595 /* SeaSick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaSick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DBE0BD1815479800E7F595 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94DBE0BF1815479800E7F595 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		94DBE0C11815479800E7F595 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		94DBE0C31815479800E7F595 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		94DBE0C71815479800E7F595 /* SeaSick-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SeaSick-Info.plist"; sourceTree = "<group>"; };
+		94DBE0C91815479800E7F595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94DBE0CB1815479800E7F595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		94DBE0CD1815479800E7F595 /* SeaSick-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeaSick-Prefix.pch"; sourceTree = "<group>"; };
+		94DBE0CE1815479800E7F595 /* SCKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCKAppDelegate.h; sourceTree = "<group>"; };
+		94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCKAppDelegate.m; sourceTree = "<group>"; };
+		94DBE0D21815479800E7F595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94DBE0D41815479800E7F595 /* SCKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCKViewController.h; sourceTree = "<group>"; };
+		94DBE0D51815479800E7F595 /* SCKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCKViewController.m; sourceTree = "<group>"; };
+		94DBE0D71815479800E7F595 /* SCKMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCKMyScene.h; sourceTree = "<group>"; };
+		94DBE0D81815479800E7F595 /* SCKMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCKMyScene.m; sourceTree = "<group>"; };
+		94DBE0DC1815479800E7F595 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		94DBE0E21815479800E7F595 /* SeaSickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeaSickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DBE0E31815479800E7F595 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		94DBE0EB1815479800E7F595 /* SeaSickTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SeaSickTests-Info.plist"; sourceTree = "<group>"; };
+		94DBE0ED1815479800E7F595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		94DBE0EF1815479800E7F595 /* SeaSickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaSickTests.m; sourceTree = "<group>"; };
+		C71AE5989D7F498092069E6E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94DBE0B71815479800E7F595 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */,
+				94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */,
+				94DBE0C41815479800E7F595 /* SpriteKit.framework in Frameworks */,
+				94DBE0BE1815479800E7F595 /* Foundation.framework in Frameworks */,
+				18802F3BB9A14C048A048E99 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DBE0DF1815479800E7F595 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DBE0E41815479800E7F595 /* XCTest.framework in Frameworks */,
+				94DBE0E61815479800E7F595 /* UIKit.framework in Frameworks */,
+				94DBE0E51815479800E7F595 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94DBE0B11815479800E7F595 = {
+			isa = PBXGroup;
+			children = (
+				94DBE0C51815479800E7F595 /* SeaSick */,
+				94DBE0E91815479800E7F595 /* SeaSickTests */,
+				94DBE0BC1815479800E7F595 /* Frameworks */,
+				94DBE0BB1815479800E7F595 /* Products */,
+				C71AE5989D7F498092069E6E /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		94DBE0BB1815479800E7F595 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE0BA1815479800E7F595 /* SeaSick.app */,
+				94DBE0E21815479800E7F595 /* SeaSickTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94DBE0BC1815479800E7F595 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE0BD1815479800E7F595 /* Foundation.framework */,
+				94DBE0BF1815479800E7F595 /* CoreGraphics.framework */,
+				94DBE0C11815479800E7F595 /* UIKit.framework */,
+				94DBE0C31815479800E7F595 /* SpriteKit.framework */,
+				94DBE0E31815479800E7F595 /* XCTest.framework */,
+				46C79096DAA940E7A5AB074A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94DBE0C51815479800E7F595 /* SeaSick */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE0CE1815479800E7F595 /* SCKAppDelegate.h */,
+				94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */,
+				94DBE0D11815479800E7F595 /* Main.storyboard */,
+				94DBE0D41815479800E7F595 /* SCKViewController.h */,
+				94DBE0D51815479800E7F595 /* SCKViewController.m */,
+				94DBE0D71815479800E7F595 /* SCKMyScene.h */,
+				94DBE0D81815479800E7F595 /* SCKMyScene.m */,
+				94DBE0DC1815479800E7F595 /* Images.xcassets */,
+				94DBE0C61815479800E7F595 /* Supporting Files */,
+			);
+			path = SeaSick;
+			sourceTree = "<group>";
+		};
+		94DBE0C61815479800E7F595 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE0C71815479800E7F595 /* SeaSick-Info.plist */,
+				94DBE0C81815479800E7F595 /* InfoPlist.strings */,
+				94DBE0CB1815479800E7F595 /* main.m */,
+				94DBE0CD1815479800E7F595 /* SeaSick-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94DBE0E91815479800E7F595 /* SeaSickTests */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE0EF1815479800E7F595 /* SeaSickTests.m */,
+				94DBE0EA1815479800E7F595 /* Supporting Files */,
+			);
+			path = SeaSickTests;
+			sourceTree = "<group>";
+		};
+		94DBE0EA1815479800E7F595 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94DBE0EB1815479800E7F595 /* SeaSickTests-Info.plist */,
+				94DBE0EC1815479800E7F595 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		94DBE0B91815479800E7F595 /* SeaSick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DBE0F31815479800E7F595 /* Build configuration list for PBXNativeTarget "SeaSick" */;
+			buildPhases = (
+				07C9EF25F486480D817042CA /* Check Pods Manifest.lock */,
+				94DBE0B61815479800E7F595 /* Sources */,
+				94DBE0B71815479800E7F595 /* Frameworks */,
+				94DBE0B81815479800E7F595 /* Resources */,
+				6BB35DB688CC4EA5A4344B4D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeaSick;
+			productName = SeaSick;
+			productReference = 94DBE0BA1815479800E7F595 /* SeaSick.app */;
+			productType = "com.apple.product-type.application";
+		};
+		94DBE0E11815479800E7F595 /* SeaSickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94DBE0F61815479800E7F595 /* Build configuration list for PBXNativeTarget "SeaSickTests" */;
+			buildPhases = (
+				94DBE0DE1815479800E7F595 /* Sources */,
+				94DBE0DF1815479800E7F595 /* Frameworks */,
+				94DBE0E01815479800E7F595 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94DBE0E81815479800E7F595 /* PBXTargetDependency */,
+			);
+			name = SeaSickTests;
+			productName = SeaSickTests;
+			productReference = 94DBE0E21815479800E7F595 /* SeaSickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94DBE0B21815479800E7F595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SCK;
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					94DBE0E11815479800E7F595 = {
+						TestTargetID = 94DBE0B91815479800E7F595;
+					};
+				};
+			};
+			buildConfigurationList = 94DBE0B51815479800E7F595 /* Build configuration list for PBXProject "SeaSick" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 94DBE0B11815479800E7F595;
+			productRefGroup = 94DBE0BB1815479800E7F595 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94DBE0B91815479800E7F595 /* SeaSick */,
+				94DBE0E11815479800E7F595 /* SeaSickTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94DBE0B81815479800E7F595 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DBE0CA1815479800E7F595 /* InfoPlist.strings in Resources */,
+				94DBE0DD1815479800E7F595 /* Images.xcassets in Resources */,
+				94DBE0D31815479800E7F595 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DBE0E01815479800E7F595 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DBE0EE1815479800E7F595 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07C9EF25F486480D817042CA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6BB35DB688CC4EA5A4344B4D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94DBE0B61815479800E7F595 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */,
+				94DBE0D01815479800E7F595 /* SCKAppDelegate.m in Sources */,
+				94DBE0CC1815479800E7F595 /* main.m in Sources */,
+				94DBE0D61815479800E7F595 /* SCKViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94DBE0DE1815479800E7F595 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94DBE0F01815479800E7F595 /* SeaSickTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		94DBE0E81815479800E7F595 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94DBE0B91815479800E7F595 /* SeaSick */;
+			targetProxy = 94DBE0E71815479800E7F595 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		94DBE0C81815479800E7F595 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DBE0C91815479800E7F595 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		94DBE0D11815479800E7F595 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DBE0D21815479800E7F595 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		94DBE0EC1815479800E7F595 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94DBE0ED1815479800E7F595 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		94DBE0F11815479800E7F595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		94DBE0F21815479800E7F595 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94DBE0F41815479800E7F595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C71AE5989D7F498092069E6E /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SeaSick/SeaSick-Prefix.pch";
+				INFOPLIST_FILE = "SeaSick/SeaSick-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		94DBE0F51815479800E7F595 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C71AE5989D7F498092069E6E /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SeaSick/SeaSick-Prefix.pch";
+				INFOPLIST_FILE = "SeaSick/SeaSick-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		94DBE0F71815479800E7F595 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SeaSick.app/SeaSick";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SeaSick/SeaSick-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SeaSickTests/SeaSickTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		94DBE0F81815479800E7F595 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SeaSick.app/SeaSick";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SeaSick/SeaSick-Prefix.pch";
+				INFOPLIST_FILE = "SeaSickTests/SeaSickTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94DBE0B51815479800E7F595 /* Build configuration list for PBXProject "SeaSick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DBE0F11815479800E7F595 /* Debug */,
+				94DBE0F21815479800E7F595 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DBE0F31815479800E7F595 /* Build configuration list for PBXNativeTarget "SeaSick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DBE0F41815479800E7F595 /* Debug */,
+				94DBE0F51815479800E7F595 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94DBE0F61815479800E7F595 /* Build configuration list for PBXNativeTarget "SeaSickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94DBE0F71815479800E7F595 /* Debug */,
+				94DBE0F81815479800E7F595 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94DBE0B21815479800E7F595 /* Project object */;
+}
