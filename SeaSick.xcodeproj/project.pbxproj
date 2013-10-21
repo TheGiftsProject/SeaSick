@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		18802F3BB9A14C048A048E99 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C79096DAA940E7A5AB074A /* libPods.a */; };
+		941AFC7818154AA900517557 /* SCKGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7718154AA900517557 /* SCKGameState.m */; };
+		941AFC7B18154B0E00517557 /* SCKActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7A18154B0E00517557 /* SCKActor.m */; };
+		941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7D18154B9D00517557 /* SCKBullet.m */; };
+		941AFC8118154BC800517557 /* SCKShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC8018154BC800517557 /* SCKShip.m */; };
 		94DBE0BE1815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
 		94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BF1815479800E7F595 /* CoreGraphics.framework */; };
 		94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
@@ -38,6 +42,14 @@
 
 /* Begin PBXFileReference section */
 		46C79096DAA940E7A5AB074A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		941AFC7618154AA900517557 /* SCKGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameState.h; path = Models/SCKGameState.h; sourceTree = "<group>"; };
+		941AFC7718154AA900517557 /* SCKGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameState.m; path = Models/SCKGameState.m; sourceTree = "<group>"; };
+		941AFC7918154B0E00517557 /* SCKActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKActor.h; path = Models/SCKActor.h; sourceTree = "<group>"; };
+		941AFC7A18154B0E00517557 /* SCKActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKActor.m; path = Models/SCKActor.m; sourceTree = "<group>"; };
+		941AFC7C18154B9D00517557 /* SCKBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKBullet.h; path = Models/SCKBullet.h; sourceTree = "<group>"; };
+		941AFC7D18154B9D00517557 /* SCKBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKBullet.m; path = Models/SCKBullet.m; sourceTree = "<group>"; };
+		941AFC7F18154BC800517557 /* SCKShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKShip.h; path = Models/SCKShip.h; sourceTree = "<group>"; };
+		941AFC8018154BC800517557 /* SCKShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKShip.m; path = Models/SCKShip.m; sourceTree = "<group>"; };
 		94DBE0BA1815479800E7F595 /* SeaSick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaSick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DBE0BD1815479800E7F595 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DBE0BF1815479800E7F595 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,6 +101,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941AFC7518154A8000517557 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				941AFC7618154AA900517557 /* SCKGameState.h */,
+				941AFC7718154AA900517557 /* SCKGameState.m */,
+				941AFC7918154B0E00517557 /* SCKActor.h */,
+				941AFC7A18154B0E00517557 /* SCKActor.m */,
+				941AFC7C18154B9D00517557 /* SCKBullet.h */,
+				941AFC7D18154B9D00517557 /* SCKBullet.m */,
+				941AFC7F18154BC800517557 /* SCKShip.h */,
+				941AFC8018154BC800517557 /* SCKShip.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		94DBE0B11815479800E7F595 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +152,7 @@
 		94DBE0C51815479800E7F595 /* SeaSick */ = {
 			isa = PBXGroup;
 			children = (
+				941AFC7518154A8000517557 /* Models */,
 				94DBE0CE1815479800E7F595 /* SCKAppDelegate.h */,
 				94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */,
 				94DBE0D11815479800E7F595 /* Main.storyboard */,
@@ -300,9 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */,
+				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
 				94DBE0D01815479800E7F595 /* SCKAppDelegate.m in Sources */,
 				94DBE0CC1815479800E7F595 /* main.m in Sources */,
+				941AFC7B18154B0E00517557 /* SCKActor.m in Sources */,
+				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
 				94DBE0D61815479800E7F595 /* SCKViewController.m in Sources */,
+				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

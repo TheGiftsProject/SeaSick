@@ -8,6 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+#import "Models/SCKGameState.h"
+
 @interface SCKMyScene : SKScene
+
+@property (nonatomic) int playerId;
+@property (strong, nonatomic) SCKGameState* gameState;
 
 @end
