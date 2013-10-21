@@ -9,11 +9,22 @@
 #import "SCKViewController.h"
 #import "SCKMyScene.h"
 
+#define GAME_SERVER_URL @"ws://192.168.2.129:8080"
+
+@interface SCKViewController ()
+
+@property (nonatomic, strong) SCKMyScene* scene;
+@property (nonatomic, strong) SCKGameServer* gameServer;
+
+@end
+
 @implementation SCKViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
+    [self.gameServer start:self];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
@@ -21,11 +32,15 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [SCKMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene = [SCKMyScene sceneWithSize:skView.bounds.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.scene];
+}
+
+- (void)setGameState:(SCKGameState *)gameState {
+  self.scene.gameState = gameState;
 }
 
 - (BOOL)shouldAutorotate

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "Services/SCKGameServer.h"
 
-@interface SCKViewController : UIViewController
+@interface SCKViewController : UIViewController<SCKGameUpdateDelegate>
 
 @end

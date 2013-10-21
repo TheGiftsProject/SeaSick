@@ -7,23 +7,12 @@
 //
 
 #import "SCKAppDelegate.h"
-#import "Services/SCKGameServer.h"
-
-#define GAME_SERVER_URL @"ws://192.168.2.129:8080"
-
-@interface SCKAppDelegate ()
-
-@property (nonatomic, strong) SCKGameServer* gameServer;
-
-@end
 
 @implementation SCKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Override point for customization after application launch.
-  self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
-  [self.gameServer start:nil];
   return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application
