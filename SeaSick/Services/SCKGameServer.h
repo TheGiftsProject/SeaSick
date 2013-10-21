@@ -8,21 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <SocketRocket/SRWebSocket.h>
+#import "../Models/SCKGameState.h"
 
-@interface SCKGameServer : NSObject
+@protocol SCKGameUpdateDelegate <NSObject>
 
-// Make it with this
-- (id)initWithURLRequest:(NSURLRequest *)request;
+-(void)setGameState:(SCKGameState *)gameState;
 
-// Set this before opening
-@property (nonatomic, assign) id <SRWebSocketDelegate> delegate;
+@end
 
-- (void)open;
+@interface SCKGameServer : NSObject<SRWebSocketDelegate>
 
-// Close it with this
-- (void)close;
-
-// Send a UTF8 String or Data
-- (void)send:(id)data;
+-(SCKGameServer*)initWithURL:(NSString *)url;
+-(void)start:(id<SCKGameUpdateDelegate>)delegate;
 
 @end

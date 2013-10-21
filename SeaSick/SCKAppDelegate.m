@@ -7,21 +7,29 @@
 //
 
 #import "SCKAppDelegate.h"
-#import "Services/SCKSocketDelegate.h"
+#import "Services/SCKGameServer.h"
+
+#define GAME_SERVER_URL @"ws://192.168.2.129:8080"
+
+@interface SCKAppDelegate ()
+
+@property (nonatomic, strong) SCKGameServer* gameServer;
+
+@end
 
 @implementation SCKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-  
-    return YES;
-}1
-							
+  // Override point for customization after application launch.
+  self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
+  [self.gameServer start:nil];
+  return YES;
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+  // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+  // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
