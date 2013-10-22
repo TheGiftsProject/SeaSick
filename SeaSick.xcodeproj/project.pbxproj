@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18802F3BB9A14C048A048E99 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C79096DAA940E7A5AB074A /* libPods.a */; };
 		661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 661DCDA3181549F70004EBBB /* SCKGameServer.m */; };
+		66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4B6371816C5F800CD6C51 /* SCKLoginViewController.m */; };
 		941AFC7818154AA900517557 /* SCKGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7718154AA900517557 /* SCKGameState.m */; };
 		941AFC7B18154B0E00517557 /* SCKActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7A18154B0E00517557 /* SCKActor.m */; };
 		941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7D18154B9D00517557 /* SCKBullet.m */; };
@@ -46,6 +47,8 @@
 		46C79096DAA940E7A5AB074A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		661DCDA2181549F70004EBBB /* SCKGameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameServer.h; path = Services/SCKGameServer.h; sourceTree = "<group>"; };
 		661DCDA3181549F70004EBBB /* SCKGameServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameServer.m; path = Services/SCKGameServer.m; sourceTree = "<group>"; };
+		66C4B6361816C5F800CD6C51 /* SCKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKLoginViewController.h; sourceTree = "<group>"; };
+		66C4B6371816C5F800CD6C51 /* SCKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKLoginViewController.m; sourceTree = "<group>"; };
 		941AFC7618154AA900517557 /* SCKGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameState.h; path = Models/SCKGameState.h; sourceTree = "<group>"; };
 		941AFC7718154AA900517557 /* SCKGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameState.m; path = Models/SCKGameState.m; sourceTree = "<group>"; };
 		941AFC7918154B0E00517557 /* SCKActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKActor.h; path = Models/SCKActor.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				94DBE0D81815479800E7F595 /* SCKMyScene.m */,
 				94DBE0DC1815479800E7F595 /* Images.xcassets */,
 				94DBE0C61815479800E7F595 /* Supporting Files */,
+				66C4B6361816C5F800CD6C51 /* SCKLoginViewController.h */,
+				66C4B6371816C5F800CD6C51 /* SCKLoginViewController.m */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 			files = (
 				94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */,
 				94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */,
+				66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */,
 				94F3797C181552FD00CE61F2 /* main.m in Sources */,
 				94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,

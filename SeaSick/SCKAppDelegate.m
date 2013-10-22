@@ -46,6 +46,20 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+  
+  if (!self.session.isOpen) {
+    // if we don't have a cached token, a call to open here would cause UX for login to
+    // occur; we don't want that to happen unless the user clicks the login button, and so
+    // we check here to make sure we have a token before calling open
+     self.session = [[FBSession alloc] init];
+    if (self.session.state == FBSessionStateCreatedTokenLoaded) {
+      // even though we had a cached token, we need to login to make the session usable
+      [self.session openWithCompletionHandler:^(FBSession *session,
+                                                            FBSessionState status,
+                                                            NSError *error) {
+      }];
+    }
+  }
     [FBAppEvents activateApp];
   
     [FBAppCall handleDidBecomeActiveWithSession:self.session];
