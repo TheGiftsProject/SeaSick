@@ -12,7 +12,7 @@
 #import "Models/SCKBullet.h"
 #import "Models/SCKGameState.h"
 
-#define GAME_SERVER_URL @"ws://192.168.2.174:8080"
+#define GAME_SERVER_URL @"ws://localhost:8080"
 
 @interface SCKViewController ()
 

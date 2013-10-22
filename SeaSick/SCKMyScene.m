@@ -135,10 +135,10 @@
             return;
         }
     }
-    
+  
     for (SCKShip *ship in self.gameState.ships) {
-        SKShapeNode *shipNode = [[SKShapeNode alloc] init];
-
+        /*SKShapeNode *shipNode = [SKShapeNode node];
+      
         shipNode.strokeColor = [UIColor redColor];
         shipNode.path = [self shipPath];
         shipNode.lineWidth = 0.5;
@@ -154,6 +154,7 @@
         }
         
         [self.containerNode addChild:shipNode];
+        */
     }
     
     //NSLog(@"SCK Scene got %d ships", self.gameState.ships.count);
