@@ -23,6 +23,7 @@
 @property (nonatomic, strong) SCKShip *myShip;
 @property (nonatomic) NSTimeInterval lastUpdateCalled;
 @property (nonatomic) BOOL accelerating;
+@property (nonatomic) CGPathRef shipPath;
 
 @end
 
@@ -89,16 +90,21 @@
     self.myShipNode.zRotation = -heading;
 }
 
-- (CGMutablePathRef) shipPath
+- (CGPathRef) shipPath
 {
-    CGMutablePathRef pathRef = CGPathCreateMutable();
-    CGPathMoveToPoint(pathRef, NULL, 0.0, -1.0);
-    CGPathAddLineToPoint(pathRef, NULL, -4, -8);
-    CGPathAddLineToPoint(pathRef, NULL, 0, 8);
-    CGPathAddLineToPoint(pathRef, NULL, 4, -8);
-    CGPathCloseSubpath(pathRef);
+    if (!_shipPath) {
+        CGMutablePathRef pathRef = CGPathCreateMutable();
+        CGPathMoveToPoint(pathRef, NULL, 0.0, -1.0);
+        CGPathAddLineToPoint(pathRef, NULL, -4, -8);
+        CGPathAddLineToPoint(pathRef, NULL, 0, 8);
+        CGPathAddLineToPoint(pathRef, NULL, 4, -8);
+        CGPathCloseSubpath(pathRef);
+        
+        _shipPath = pathRef;
+    }
     
-    return pathRef;
+    
+    return _shipPath;
 }
 
 - (CGPoint) gamePointToCGPoint:(SCKPoint)pt
@@ -116,9 +122,6 @@
 {
     _gameState = gameState;
     
-    for (SKNode *node in self.containerNode.children) {
-        [node removeAllActions];
-    }
     [self.containerNode removeAllChildren];
     
     if (!self.myShip) {
