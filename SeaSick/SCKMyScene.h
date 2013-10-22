@@ -11,12 +11,7 @@
 #import "Models/SCKGameState.h"
 #import "Models/SCKShip.h"
 
-@protocol SCKSceneDelegate <NSObject>
 
-- (void) fire;
-- (void) myShipStateChanged:(SCKShip *)myShip;
-
-@end
 
 @interface SCKMyScene : SKScene
 

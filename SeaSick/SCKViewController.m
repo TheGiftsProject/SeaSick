@@ -7,40 +7,68 @@
 //
 
 #import "SCKViewController.h"
-#import "SCKMyScene.h"
+#import "SCKGameScene.h"
 #import "Models/SCKShip.h"
 #import "Models/SCKBullet.h"
 #import "Models/SCKGameState.h"
 
-#define GAME_SERVER_URL @"ws://192.168.2.174:8080"
+#import "cocos2d.h"
+
+#define GAME_SERVER_URL @"ws://127.0.0.1:8088"
+
+#define WHY_NOT YES
+#define HELL_NO NO
+#define FO_SHO YES
 
 @interface SCKViewController ()
 
-@property (nonatomic, strong) SCKMyScene* scene;
+@property (nonatomic, strong) SCKGameScene* scene;
 @property (nonatomic, strong) SCKGameServer* gameServer;
+
+@property (nonatomic, weak) CCDirectorIOS *director;
 
 @end
 
 @implementation SCKViewController
+
+
+
+- (void) initCocos
+{
+    CCGLView *glView = [CCGLView viewWithFrame:self.view.bounds
+								   pixelFormat:kEAGLColorFormatRGBA8
+								   depthFormat:0
+							preserveBackbuffer:NO
+									sharegroup:nil
+								 multiSampling:NO
+							   numberOfSamples:0];
+    
+    self.director = (CCDirectorIOS*)[CCDirector sharedDirector];
+    
+    self.director.displayStats = YES;
+    self.director.animationInterval = 1.0/60.0;
+    self.director.view = glView;
+    
+    self.director.projection = kCCDirectorProjection2D;
+    
+    [self.director enableRetinaDisplay:WHY_NOT];
+    [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+    
+    [self.view addSubview:glView];
+    
+    self.scene = [[SCKGameScene alloc] init];
+    
+    [self.director runWithScene:self.scene];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
     [self.gameServer start:self];
+    
+    [self initCocos];
 
-    // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    
-    // Create and configure the scene.
-    self.scene = [[SCKMyScene alloc] initWithSize:skView.bounds.size andPlayerPerspective:NO];
-    self.scene.scaleMode = SKSceneScaleModeAspectFill;
-    self.scene.delegate = self;
-    
-    // Present the scene.
-    [skView presentScene:self.scene];
 }
 
 - (void)setGameState:(SCKGameState *)gameState {

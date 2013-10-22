@@ -13,13 +13,15 @@
 		941AFC7B18154B0E00517557 /* SCKActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7A18154B0E00517557 /* SCKActor.m */; };
 		941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7D18154B9D00517557 /* SCKBullet.m */; };
 		941AFC8118154BC800517557 /* SCKShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC8018154BC800517557 /* SCKShip.m */; };
+		942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C161816AAA800D0D375 /* SCKGameScene.m */; };
+		942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C191816B6DA00D0D375 /* SCKShipNode.m */; };
+		942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C1C1816C37500D0D375 /* SCKBulletNode.m */; };
 		94DBE0BE1815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
 		94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BF1815479800E7F595 /* CoreGraphics.framework */; };
 		94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
 		94DBE0C41815479800E7F595 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C31815479800E7F595 /* SpriteKit.framework */; };
 		94DBE0CA1815479800E7F595 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0C81815479800E7F595 /* InfoPlist.strings */; };
 		94DBE0D31815479800E7F595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0D11815479800E7F595 /* Main.storyboard */; };
-		94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D81815479800E7F595 /* SCKMyScene.m */; };
 		94DBE0DD1815479800E7F595 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0DC1815479800E7F595 /* Images.xcassets */; };
 		94DBE0E41815479800E7F595 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0E31815479800E7F595 /* XCTest.framework */; };
 		94DBE0E51815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
@@ -54,6 +56,12 @@
 		941AFC7D18154B9D00517557 /* SCKBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKBullet.m; path = Models/SCKBullet.m; sourceTree = "<group>"; };
 		941AFC7F18154BC800517557 /* SCKShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKShip.h; path = Models/SCKShip.h; sourceTree = "<group>"; };
 		941AFC8018154BC800517557 /* SCKShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKShip.m; path = Models/SCKShip.m; sourceTree = "<group>"; };
+		942C7C151816AAA800D0D375 /* SCKGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKGameScene.h; sourceTree = "<group>"; };
+		942C7C161816AAA800D0D375 /* SCKGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKGameScene.m; sourceTree = "<group>"; };
+		942C7C181816B6DA00D0D375 /* SCKShipNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKShipNode.h; sourceTree = "<group>"; };
+		942C7C191816B6DA00D0D375 /* SCKShipNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKShipNode.m; sourceTree = "<group>"; };
+		942C7C1B1816C37500D0D375 /* SCKBulletNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKBulletNode.h; sourceTree = "<group>"; };
+		942C7C1C1816C37500D0D375 /* SCKBulletNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKBulletNode.m; sourceTree = "<group>"; };
 		94DBE0BA1815479800E7F595 /* SeaSick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaSick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DBE0BD1815479800E7F595 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DBE0BF1815479800E7F595 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,10 +183,16 @@
 				94DBE0D11815479800E7F595 /* Main.storyboard */,
 				94DBE0D41815479800E7F595 /* SCKViewController.h */,
 				94DBE0D51815479800E7F595 /* SCKViewController.m */,
-				94DBE0D71815479800E7F595 /* SCKMyScene.h */,
-				94DBE0D81815479800E7F595 /* SCKMyScene.m */,
 				94DBE0DC1815479800E7F595 /* Images.xcassets */,
 				94DBE0C61815479800E7F595 /* Supporting Files */,
+				942C7C151816AAA800D0D375 /* SCKGameScene.h */,
+				942C7C161816AAA800D0D375 /* SCKGameScene.m */,
+				94DBE0D71815479800E7F595 /* SCKMyScene.h */,
+				94DBE0D81815479800E7F595 /* SCKMyScene.m */,
+				942C7C181816B6DA00D0D375 /* SCKShipNode.h */,
+				942C7C191816B6DA00D0D375 /* SCKShipNode.m */,
+				942C7C1B1816C37500D0D375 /* SCKBulletNode.h */,
+				942C7C1C1816C37500D0D375 /* SCKBulletNode.m */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -346,12 +360,14 @@
 			files = (
 				94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */,
 				94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */,
+				942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */,
 				94F3797C181552FD00CE61F2 /* main.m in Sources */,
-				94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
+				942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */,
 				941AFC7B18154B0E00517557 /* SCKActor.m in Sources */,
 				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
 				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
+				942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */,
 				661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
