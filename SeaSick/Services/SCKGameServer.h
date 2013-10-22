@@ -14,6 +14,7 @@
 @protocol SCKGameUpdateDelegate <NSObject>
 
 -(void)setGameState:(SCKGameState *)gameState;
+-(void)updateShipCreated:(int)shipId;
 
 @end
 
@@ -22,5 +23,6 @@
 -(SCKGameServer*)initWithURL:(NSString *)url;
 -(void)start:(id<SCKGameUpdateDelegate>)delegate;
 -(void)updateShipState:(SCKShip *)ship;
+-(void)updateShipCreated:(NSDictionary *)shipCreatedMessage;
 
 @end

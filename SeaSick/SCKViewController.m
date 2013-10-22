@@ -47,6 +47,10 @@
   [self.gameServer updateShipState:ship];
 }
 
+-(void)updateShipCreated:(int)shipId {
+  //update ship
+}
+
 - (BOOL)shouldAutorotate
 {
     return NO;

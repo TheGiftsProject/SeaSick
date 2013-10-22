@@ -47,8 +47,12 @@
   NSString* messageString = (NSString*)message;
   NSData *data = [messageString dataUsingEncoding:NSUTF8StringEncoding];
   NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: nil];
-  if([jsonObject[@"action"] isEqualToString:@"gameState"]) {
+  NSString *currentAction = jsonObject[@"action"];
+  if([currentAction isEqualToString:@"gameState"]) {
     [self updateGameState:jsonObject[@"params"]];
+  }
+  else if([currentAction isEqualToString:@"shipCreated"]){
+    [self updateShipCreated:jsonObject[@"params"]];
   }
 }
 
@@ -58,6 +62,10 @@
   newGameState.ships = [SCKShip fromJSONArray:updateData[@"ships"]];
   
   [self.delegate setGameState:newGameState];
+}
+
+-(void)updateShipCreated:(NSDictionary *)shipCreatedMessage {
+  [self.delegate updateShipCreated:[shipCreatedMessage[@"id"] intValue]];
 }
 
 -(void)updateShipState:(SCKShip *)ship {
