@@ -16,3 +16,5 @@
     #import <Underscore.h>
     #define _ Underscore
 #endif
+
+#import "cocos2d.h"
