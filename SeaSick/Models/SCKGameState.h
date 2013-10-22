@@ -13,4 +13,6 @@
 @property (strong, nonatomic) NSArray *ships; // of SCKShip*
 @property (strong, nonatomic) NSArray *bullets; // of SCKBullet*
 
+@property (nonatomic) int playerShipId;
+
 @end

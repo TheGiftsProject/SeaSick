@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) SRWebSocket *socket;
 @property (strong, nonatomic) id<SCKGameUpdateDelegate> delegate;
+@property (nonatomic) dispatch_queue_t dq;
 
 @end
 
@@ -25,6 +26,8 @@
   if (self) {
     self.url = url;
     self.socket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:url]];
+    self.dq = dispatch_queue_create("game server queue", NULL);
+    [self.socket setDelegateDispatchQueue:self.dq];
     self.socket.delegate = self;
   }
   
@@ -36,14 +39,14 @@
   [self.socket open];
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
 {
   NSLog(@":( Websocket Failed With Error %@", error);
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message;
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-  NSLog(@"Received \"%@\"", message);
+  //NSLog(@"Received \"%@\"", message);
   NSString* messageString = (NSString*)message;
   NSData *data = [messageString dataUsingEncoding:NSUTF8StringEncoding];
   NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: nil];
@@ -51,22 +54,20 @@
   if([currentAction isEqualToString:@"gameState"]) {
     [self updateGameState:jsonObject[@"params"]];
   }
-  else if([currentAction isEqualToString:@"shipCreated"]){
-    [self updateShipCreated:jsonObject[@"params"]];
-  }
 }
 
 -(void)updateGameState:(NSDictionary*)updateData {
   SCKGameState *newGameState = [SCKGameState new];
   
   newGameState.ships = [SCKShip fromJSONArray:updateData[@"ships"]];
+  newGameState.playerShipId = [updateData[@"playerShipId"] intValue];
+
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [self.delegate setGameState:newGameState];
+  });
   
-  [self.delegate setGameState:newGameState];
 }
 
--(void)updateShipCreated:(NSDictionary *)shipCreatedMessage {
-  [self.delegate updateShipCreated:[shipCreatedMessage[@"id"] intValue]];
-}
 
 -(void)updateShipState:(SCKShip *)ship {
   NSError *error = nil;
@@ -77,12 +78,12 @@
   [self.socket send:data];
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
 {
   NSLog(@"WebSocket closed");
 }
 
-- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
   NSLog(@"Websocket Connected");
 }

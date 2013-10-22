@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18802F3BB9A14C048A048E99 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C79096DAA940E7A5AB074A /* libPods.a */; };
 		661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 661DCDA3181549F70004EBBB /* SCKGameServer.m */; };
-		6691B8221815559400D556CC /* SCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D51815479800E7F595 /* SCKViewController.m */; };
 		941AFC7818154AA900517557 /* SCKGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7718154AA900517557 /* SCKGameState.m */; };
 		941AFC7B18154B0E00517557 /* SCKActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7A18154B0E00517557 /* SCKActor.m */; };
 		941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7D18154B9D00517557 /* SCKBullet.m */; };
@@ -19,8 +18,6 @@
 		94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
 		94DBE0C41815479800E7F595 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C31815479800E7F595 /* SpriteKit.framework */; };
 		94DBE0CA1815479800E7F595 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0C81815479800E7F595 /* InfoPlist.strings */; };
-		94DBE0CC1815479800E7F595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CB1815479800E7F595 /* main.m */; };
-		94DBE0D01815479800E7F595 /* SCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */; };
 		94DBE0D31815479800E7F595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0D11815479800E7F595 /* Main.storyboard */; };
 		94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D81815479800E7F595 /* SCKMyScene.m */; };
 		94DBE0DD1815479800E7F595 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0DC1815479800E7F595 /* Images.xcassets */; };
@@ -29,6 +26,10 @@
 		94DBE0E61815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
 		94DBE0EE1815479800E7F595 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94DBE0EC1815479800E7F595 /* InfoPlist.strings */; };
 		94DBE0F01815479800E7F595 /* SeaSickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0EF1815479800E7F595 /* SeaSickTests.m */; };
+		94F3797C181552FD00CE61F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CB1815479800E7F595 /* main.m */; };
+		94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D51815479800E7F595 /* SCKViewController.m */; };
+		94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */; };
+		94F379801815623000CE61F2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3797F1815623000CE61F2 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		46C79096DAA940E7A5AB074A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		661DCDA2181549F70004EBBB /* SCKGameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameServer.h; path = Services/SCKGameServer.h; sourceTree = "<group>"; };
 		661DCDA3181549F70004EBBB /* SCKGameServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameServer.m; path = Services/SCKGameServer.m; sourceTree = "<group>"; };
-		664A82B0181661BA00A98B23 /* SCKShipUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKShipUpdateDelegate.h; sourceTree = "<group>"; };
 		941AFC7618154AA900517557 /* SCKGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameState.h; path = Models/SCKGameState.h; sourceTree = "<group>"; };
 		941AFC7718154AA900517557 /* SCKGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameState.m; path = Models/SCKGameState.m; sourceTree = "<group>"; };
 		941AFC7918154B0E00517557 /* SCKActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKActor.h; path = Models/SCKActor.h; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 		94DBE0EB1815479800E7F595 /* SeaSickTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SeaSickTests-Info.plist"; sourceTree = "<group>"; };
 		94DBE0ED1815479800E7F595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94DBE0EF1815479800E7F595 /* SeaSickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaSickTests.m; sourceTree = "<group>"; };
+		94F3797F1815623000CE61F2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C71AE5989D7F498092069E6E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F379801815623000CE61F2 /* CoreMotion.framework in Frameworks */,
 				94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */,
 				94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */,
 				94DBE0C41815479800E7F595 /* SpriteKit.framework in Frameworks */,
@@ -152,6 +154,7 @@
 		94DBE0BC1815479800E7F595 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94F3797F1815623000CE61F2 /* CoreMotion.framework */,
 				94DBE0BD1815479800E7F595 /* Foundation.framework */,
 				94DBE0BF1815479800E7F595 /* CoreGraphics.framework */,
 				94DBE0C11815479800E7F595 /* UIKit.framework */,
@@ -176,7 +179,6 @@
 				94DBE0D81815479800E7F595 /* SCKMyScene.m */,
 				94DBE0DC1815479800E7F595 /* Images.xcassets */,
 				94DBE0C61815479800E7F595 /* Supporting Files */,
-				664A82B0181661BA00A98B23 /* SCKShipUpdateDelegate.h */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -342,11 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6691B8221815559400D556CC /* SCKViewController.m in Sources */,
+				94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */,
+				94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */,
+				94F3797C181552FD00CE61F2 /* main.m in Sources */,
 				94DBE0D91815479800E7F595 /* SCKMyScene.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
-				94DBE0D01815479800E7F595 /* SCKAppDelegate.m in Sources */,
-				94DBE0CC1815479800E7F595 /* main.m in Sources */,
 				941AFC7B18154B0E00517557 /* SCKActor.m in Sources */,
 				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
 				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
