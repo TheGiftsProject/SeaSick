@@ -54,28 +54,19 @@
 
 -(void)updateGameState:(NSDictionary*)updateData {
   SCKGameState *newGameState = [SCKGameState new];
-  USArrayWrapper *ships = _.array(updateData[@"ships"]);
-//USArrayWrapper *bullets = _.array(updateData[@"bullets"]);
   
-  newGameState.ships = ships.map(^SCKShip *(NSDictionary *ship)  {
-    SCKShip *s = [SCKShip new];
-    s.Id = [((NSString*)ship[@"id"]) integerValue];
-    s.score = [((NSString*)ship[@"score"]) integerValue];
-    s.health = [((NSString*)ship[@"health"]) integerValue];
-    NSArray *velArr = (NSArray*)ship[@"velocity"];
-    NSArray *posArr = (NSArray*)ship[@"position"];
-    SCKPoint vel;
-    vel.x = [((NSString*)velArr[0]) floatValue];
-    vel.y = [((NSString*)velArr[1]) floatValue];
-    s.velocity = vel;
-    SCKPoint pos;
-    pos.x = [((NSString*)posArr[0]) floatValue];
-    pos.y = [((NSString*)posArr[1]) floatValue];
-    s.position = pos;
-    return s;
-  }).unwrap;
+  newGameState.ships = [SCKShip fromJSONArray:updateData[@"ships"]];
   
   [self.delegate setGameState:newGameState];
+}
+
+-(void)updateShipState:(SCKShip *)ship {
+  NSError *error = nil;
+  NSDictionary *shipStatusMessage = @{@"action": @"shipStatus",
+                                      @"params": [ship toJSONDictionary]};
+  NSData *data = [NSJSONSerialization dataWithJSONObject:shipStatusMessage options:0 error:&error];
+
+  [self.socket send:data];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;

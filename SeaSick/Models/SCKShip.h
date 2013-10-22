@@ -15,5 +15,8 @@
 @property (nonatomic) int health;
 @property (nonatomic) int score;
 
++(SCKShip*)fromJSON:(NSDictionary *)json;
++(NSArray*)fromJSONArray:(NSArray *)jsonArray;
+-(NSDictionary*)toJSONDictionary;
 
 @end

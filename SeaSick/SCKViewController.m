@@ -9,7 +9,7 @@
 #import "SCKViewController.h"
 #import "SCKMyScene.h"
 
-#define GAME_SERVER_URL @"ws://192.168.2.129:8080"
+#define GAME_SERVER_URL @"ws://192.168.2.174:8080"
 
 @interface SCKViewController ()
 
@@ -41,6 +41,10 @@
 
 - (void)setGameState:(SCKGameState *)gameState {
   self.scene.gameState = gameState;
+}
+
+- (void)updateShipState:(SCKShip *)ship {
+  [self.gameServer updateShipState:ship];
 }
 
 - (BOOL)shouldAutorotate

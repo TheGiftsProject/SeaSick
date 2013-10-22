@@ -45,6 +45,7 @@
 		46C79096DAA940E7A5AB074A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		661DCDA2181549F70004EBBB /* SCKGameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameServer.h; path = Services/SCKGameServer.h; sourceTree = "<group>"; };
 		661DCDA3181549F70004EBBB /* SCKGameServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameServer.m; path = Services/SCKGameServer.m; sourceTree = "<group>"; };
+		664A82B0181661BA00A98B23 /* SCKShipUpdateDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKShipUpdateDelegate.h; sourceTree = "<group>"; };
 		941AFC7618154AA900517557 /* SCKGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameState.h; path = Models/SCKGameState.h; sourceTree = "<group>"; };
 		941AFC7718154AA900517557 /* SCKGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameState.m; path = Models/SCKGameState.m; sourceTree = "<group>"; };
 		941AFC7918154B0E00517557 /* SCKActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKActor.h; path = Models/SCKActor.h; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 				94DBE0D81815479800E7F595 /* SCKMyScene.m */,
 				94DBE0DC1815479800E7F595 /* Images.xcassets */,
 				94DBE0C61815479800E7F595 /* Supporting Files */,
+				664A82B0181661BA00A98B23 /* SCKShipUpdateDelegate.h */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";

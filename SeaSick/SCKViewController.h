@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "Services/SCKGameServer.h"
+#import "SCKShipUpdateDelegate.h"
 
-@interface SCKViewController : UIViewController<SCKGameUpdateDelegate>
+@interface SCKViewController : UIViewController<SCKGameUpdateDelegate, SCKShipUpdateDelegate>
 
 @end

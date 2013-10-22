@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <SocketRocket/SRWebSocket.h>
 #import "../Models/SCKGameState.h"
+#import "../Models/SCKShip.h"
 
 @protocol SCKGameUpdateDelegate <NSObject>
 
@@ -20,5 +21,6 @@
 
 -(SCKGameServer*)initWithURL:(NSString *)url;
 -(void)start:(id<SCKGameUpdateDelegate>)delegate;
+-(void)updateShipState:(SCKShip *)ship;
 
 @end
