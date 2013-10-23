@@ -13,4 +13,6 @@
 
 @interface SCKViewController : UIViewController<SCKGameUpdateDelegate, SCKSceneDelegate>
 
+@property (nonatomic, strong) NSString* playerName;
+
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mhe-I8-eqp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0xd-yN-bQ1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
-                <viewController id="LVB-YS-i5n" customClass="SCKViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SCKViewController" id="LVB-YS-i5n" customClass="SCKViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mKH-yG-n7o"/>
                         <viewControllerLayoutGuide type="bottom" id="jtz-jr-oW6"/>
@@ -17,15 +17,31 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fUi-Cr-T1K"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="44"/>
+            <point key="canvasLocation" x="862" y="-226"/>
+        </scene>
+        <!--Top View Controller-->
+        <scene sceneID="cPv-fG-671">
+            <objects>
+                <navigationController storyboardIdentifier="MainStoryboard" definesPresentationContext="YES" id="0xd-yN-bQ1" customClass="SCKTopViewController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hu1-Bp-DRS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mhe-I8-eqp" kind="relationship" relationship="rootViewController" id="LWz-sI-gxO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgY-Cf-jUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-224" y="126"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Xxd-bn-mxV">
             <objects>
-                <viewController id="mhe-I8-eqp" customClass="SCKLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SCKLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mhe-I8-eqp" customClass="SCKLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eOC-hP-6pJ"/>
                         <viewControllerLayoutGuide type="bottom" id="3qQ-Pe-JiW"/>
@@ -47,6 +63,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qee-5L-jyc"/>
                     <connections>
                         <outlet property="loginToFacebookBtn" destination="Bh1-b7-TeN" id="h5x-r6-9Fl"/>
                         <segue destination="LVB-YS-i5n" kind="modal" identifier="loggedInSegue" id="Kk9-bD-UDi"/>
@@ -54,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0W-pT-N2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="44"/>
+            <point key="canvasLocation" x="360" y="-226"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

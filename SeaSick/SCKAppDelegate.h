@@ -12,6 +12,5 @@
 @interface SCKAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) FBSession *session;
 
 @end

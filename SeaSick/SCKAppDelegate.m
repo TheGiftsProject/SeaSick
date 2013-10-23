@@ -7,12 +7,13 @@
 //
 
 #import "SCKAppDelegate.h"
+#import "SCKLoginViewController.h"
+#import "SCKViewController.h"
 
 @implementation SCKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  // Override point for customization after application launch.
   return YES;
 }
 
@@ -23,7 +24,7 @@
   // attempt to extract a token from the url
   return [FBAppCall handleOpenURL:url
                 sourceApplication:sourceApplication
-                      withSession:self.session];
+                      withSession:[FBSession activeSession]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -46,29 +47,15 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-  
-  if (!self.session.isOpen) {
-    // if we don't have a cached token, a call to open here would cause UX for login to
-    // occur; we don't want that to happen unless the user clicks the login button, and so
-    // we check here to make sure we have a token before calling open
-     self.session = [[FBSession alloc] init];
-    if (self.session.state == FBSessionStateCreatedTokenLoaded) {
-      // even though we had a cached token, we need to login to make the session usable
-      [self.session openWithCompletionHandler:^(FBSession *session,
-                                                            FBSessionState status,
-                                                            NSError *error) {
-      }];
-    }
-  }
     [FBAppEvents activateApp];
   
-    [FBAppCall handleDidBecomeActiveWithSession:self.session];
+    [FBAppCall handleDidBecomeActiveWithSession:[FBSession activeSession]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [self.session close];
+    [[FBSession activeSession] close];
 }
 
 @end
