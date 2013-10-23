@@ -44,9 +44,7 @@
     }
     
     // if the session isn't open, let's open it now and present the login UX to the user
-    [activeSession openWithCompletionHandler:^(FBSession *session,
-                                                     FBSessionState status,
-                                                     NSError *error) {
+    [FBSession openActiveSessionWithReadPermissions:@[@"email"] allowLoginUI:YES completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
       [FBSession setActiveSession:session];
       if (session.isOpen) {
         [[FBRequest requestForMe] startWithCompletionHandler:
