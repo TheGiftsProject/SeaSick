@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862" y="-226"/>
+            <point key="canvasLocation" x="360" y="502"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="cPv-fG-671">
@@ -31,7 +31,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mhe-I8-eqp" kind="relationship" relationship="rootViewController" id="LWz-sI-gxO"/>
+                        <segue destination="LVB-YS-i5n" kind="modal" identifier="mainSegue" id="S6J-8f-2zS"/>
+                        <segue destination="mhe-I8-eqp" kind="modal" identifier="loginSegue" id="dDn-uF-ioQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgY-Cf-jUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,7 +67,6 @@
                     <navigationItem key="navigationItem" id="qee-5L-jyc"/>
                     <connections>
                         <outlet property="loginToFacebookBtn" destination="Bh1-b7-TeN" id="h5x-r6-9Fl"/>
-                        <segue destination="LVB-YS-i5n" kind="modal" identifier="loggedInSegue" id="Kk9-bD-UDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0W-pT-N2N" userLabel="First Responder" sceneMemberID="firstResponder"/>

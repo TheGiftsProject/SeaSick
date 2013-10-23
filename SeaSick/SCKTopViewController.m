@@ -17,29 +17,21 @@
 
 @implementation SCKTopViewController
 
-- (void)viewDidLoad {
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:YES];
   [FBSession setActiveSession:[FBSession new]];
   FBSession *activeSession = [FBSession activeSession];
   if (activeSession.state == FBSessionStateCreatedTokenLoaded) {
-    SCKLoginViewController *loginViewController = [[self viewControllers] firstObject];
-    [loginViewController.view setHidden:true];
-  }
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-  FBSession *activeSession = [FBSession activeSession];
-  if (activeSession.state == FBSessionStateCreatedTokenLoaded) {
-    [activeSession openWithCompletionHandler:^(FBSession *session,
-                                               FBSessionState status,
-                                               NSError *error) {
-      UIViewController *cont = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SCKViewController"];
-      [self presentViewController:cont animated:NO completion:nil];
-    }];
+    FBSession *activeSession = [FBSession activeSession];
+    if (activeSession.state == FBSessionStateCreatedTokenLoaded) {
+      [activeSession openWithCompletionHandler:^(FBSession *session,
+                                                 FBSessionState status,
+                                                 NSError *error) {
+         [self performSegueWithIdentifier:@"mainSegue" sender:self];
+      }];
+    }
+  } else {
+    [self performSegueWithIdentifier:@"loginSegue" sender:self];
   }
 }
 

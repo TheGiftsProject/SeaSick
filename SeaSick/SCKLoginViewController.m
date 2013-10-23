@@ -21,7 +21,7 @@
   
   if([[FBSession activeSession] isOpen]){
     self.loginToFacebookBtn.titleLabel.text = @"Logout";
-    [self performSegueWithIdentifier:@"loggedInSegue" sender:self];
+   [self dismissViewControllerAnimated:YES completion:nil];
   }
 
 }
@@ -54,7 +54,7 @@
            NSDictionary<FBGraphUser> *user,
            NSError *error) {
            if (!error) {
-             [self performSegueWithIdentifier:@"loggedInSegue" sender:user];
+             [self dismissViewControllerAnimated:YES completion:nil];
            }
          }];
       }
