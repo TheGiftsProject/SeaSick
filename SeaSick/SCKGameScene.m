@@ -55,6 +55,7 @@
     
     [self.gameLayer removeAllChildrenWithCleanup:YES];
     
+    /*
     if (!self.myShip) {
         for (SCKShip *ship in self.gameState.ships) {
             if (ship.Id == self.gameState.playerShipId) {
@@ -65,21 +66,16 @@
         if (!self.myShip) {
             return;
         }
-    }
+    }*/
     
     for (SCKShip *ship in self.gameState.ships) {
         SCKShipNode *shipNode = [[SCKShipNode alloc] init];
+        //NSLog(@"%d %f %f", ship.Id, ship.position.x, ship.position.y);
+        shipNode.position = [self gamePointToCGPoint:ship.position];
         
-        if (ship.Id == self.myShip.Id) {
-            self.myShipNode = shipNode;
-            shipNode.position = [self gamePointToCGPoint:self.myShip.position];
-            [shipNode setRotation:CC_RADIANS_TO_DEGREES(ship.direction + M_PI_2)];
-        }
-        else {
-            shipNode.position = [self gamePointToCGPoint:ship.position];
-            //[shipNode runAction:[SKAction repeatActionForever:[SKAction moveBy:[self gamePointToCGVector:ship.velocity] duration:1.0]]];
-            [shipNode setRotation:CC_RADIANS_TO_DEGREES(ship.direction + M_PI_2)];
-        }
+        //[shipNode runAction:[SKAction repeatActionForever:[SKAction moveBy:[self gamePointToCGVector:ship.velocity] duration:1.0]]];
+        [shipNode setRotation:CC_RADIANS_TO_DEGREES(ship.direction + M_PI_2)];
+    
         
         [self.gameLayer addChild:shipNode];
     }

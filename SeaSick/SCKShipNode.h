@@ -8,6 +8,9 @@
 
 #import "CCNode.h"
 
+
 @interface SCKShipNode : CCNode
+
+@property (nonatomic) BOOL isMyShip;
 
 @end
