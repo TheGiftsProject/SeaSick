@@ -14,7 +14,7 @@
 
 #import "cocos2d.h"
 
-#define GAME_SERVER_URL @"ws://127.0.0.1:8088"
+#define GAME_SERVER_URL @"ws://192.168.2.226:8088"
 
 #define WHY_NOT YES
 #define HELL_NO NO
@@ -57,6 +57,7 @@
     [self.view addSubview:glView];
     
     self.scene = [[SCKGameScene alloc] init];
+    self.scene.delegate = self;
     
     [self.director runWithScene:self.scene];
 }

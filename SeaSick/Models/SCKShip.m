@@ -15,6 +15,7 @@
   s.Id = [((NSString*)ship[@"id"]) integerValue];
   s.score = [((NSString*)ship[@"score"]) integerValue];
   s.health = [((NSString*)ship[@"health"]) integerValue];
+    s.direction =[((NSString*)ship[@"direction"]) floatValue];
   NSArray *velArr = (NSArray*)ship[@"velocity"];
   NSArray *posArr = (NSArray*)ship[@"position"];
   SCKPoint vel;
@@ -24,7 +25,7 @@
   SCKPoint pos;
   pos.x = [((NSString*)posArr[0]) floatValue];
   pos.y = [((NSString*)posArr[1]) floatValue];
-  s.velocity = pos;
+  s.position = pos;
   return s;
 }
 
