@@ -96,6 +96,14 @@
   [self.socket send:data];
 }
 
+- (void)shipFired {
+    NSError *error = nil;
+    NSDictionary *shipFiredMessage = @{@"action": @"shipFired"}; // PEW!
+    NSData *data = [NSJSONSerialization dataWithJSONObject:shipFiredMessage options:0 error:&error];
+    
+    [self.socket send:data];
+}
+
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
 {
   NSLog(@"WebSocket closed");

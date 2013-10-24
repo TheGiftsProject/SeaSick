@@ -86,7 +86,7 @@
 }
 
 - (void)fire {
-    NSLog(@"PEW!");
+    [self.gameServer shipFired]; // PEW!
 }
 
 

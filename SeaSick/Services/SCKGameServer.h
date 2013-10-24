@@ -24,5 +24,6 @@
 - (void) updateShipDirection:(SCKShip *)ship;
 
 - (void) updateShip:(SCKShip *)ship accelerating:(BOOL)accel;
+- (void) shipFired;
 
 @end
