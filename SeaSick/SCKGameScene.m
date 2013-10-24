@@ -41,7 +41,9 @@
 {
   if (self = [super init]) {
     
-    CCLayerColor *backgroundLayer = [[CCLayerColor alloc] initWithColor:ccc4(0, 0, 255, 255)];
+    CCLayerGradient *backgroundLayer = [CCLayerGradient layerWithColor:ccc4(0, 0, 255, 255)
+                                                              fadingTo:ccc4(0, 0, 128, 255)
+                                                           alongVector:ccp(0,-1)];
     [self addChild:backgroundLayer];
     
     self.gameLayer = [[CCLayer alloc] init];
@@ -65,13 +67,6 @@
                                   self.boundingBox.size.height - HEALTH_BAR_HEIGHT/2.0f - 5.0f);
     [self.statusLayer addChild:self.healthBar];
     
-    self.scoreLabel = [CCLabelTTF labelWithString:@"" fontName:@"Visitor TT2 BRK" fontSize:14.0f];
-    self.scoreLabel.verticalAlignment = kCCVerticalTextAlignmentTop;
-    self.scoreLabel.horizontalAlignment = kCCTextAlignmentLeft;
-    self.scoreLabel.position = ccp(2.0, self.boundingBox.size.height - 1.0);
-    self.scoreLabel.anchorPoint = ccp(0, 1);
-    
-    [self.statusLayer addChild:self.scoreLabel];
     
     [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
       if (error) {
@@ -129,7 +124,16 @@
 - (void) updateHUD
 {
   self.healthBar.health = self.myShip.health;
-  [self.scoreLabel setString:[NSString stringWithFormat:@"%@ - %d", self.playerName, self.myShip.score]];
+  if (self.scoreLabel) {
+    [self.statusLayer removeChild:self.scoreLabel];
+  }
+  NSString *labelString = [NSString stringWithFormat:@"%@ - %d", self.playerName, self.myShip.score];
+  self.scoreLabel = [CCLabelTTF labelWithString:labelString fontName:@"Visitor TT2 BRK" fontSize:10.0f];
+  self.scoreLabel.verticalAlignment = kCCVerticalTextAlignmentTop;
+  self.scoreLabel.horizontalAlignment = kCCTextAlignmentLeft;
+  self.scoreLabel.position = ccp(2.0, self.boundingBox.size.height - 1.0);
+  self.scoreLabel.anchorPoint = ccp(0, 1);
+  [self.statusLayer addChild:self.scoreLabel];
 }
 
 - (void)setGameState:(SCKGameState *)gameState

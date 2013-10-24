@@ -15,7 +15,7 @@
 #import "MBProgressHUD.h"
 #import "cocos2d.h"
 
-#define GAME_SERVER_URL @"ws://127.0.0.1:8088"
+#define GAME_SERVER_URL @"ws://192.168.2.93:8088"
 
 #define WHY_NOT YES
 #define HELL_NO NO

@@ -51,8 +51,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   SCKViewController *viewController = [segue destinationViewController];
-  NSDictionary<FBGraphUser> *user = (NSDictionary<FBGraphUser> *)sender;
-  viewController.playerName = user.name;
+  if ([sender isKindOfClass:[NSDictionary class]]) {
+    if ([sender conformsToProtocol:@protocol(FBGraphUser)]) {
+      NSDictionary<FBGraphUser> *user = (NSDictionary<FBGraphUser> *)sender;
+      viewController.playerName = user.name;
+    }
+  }
+
 }
 
 @end
