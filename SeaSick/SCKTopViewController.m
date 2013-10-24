@@ -11,6 +11,7 @@
 #import "SCKViewController.h"
 #import <FacebookSDK.h>
 #import "MBProgressHUD.h"
+#import "SCKUser+CurrentUser.h"
 
 @interface SCKTopViewController ()
 
@@ -20,30 +21,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:YES];
-  [FBSession setActiveSession:[FBSession new]];
-  FBSession *activeSession = [FBSession activeSession];
-  if (activeSession.state == FBSessionStateCreatedTokenLoaded) {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"Fetching user data";
-    FBSession *activeSession = [FBSession activeSession];
-    if (activeSession.state == FBSessionStateCreatedTokenLoaded) {
-      [activeSession openWithCompletionHandler:^(FBSession *session,
-                                                 FBSessionState status,
-                                                 NSError *error) {
-        [FBSession setActiveSession:session];
-        if (session.isOpen) {
-          [[FBRequest requestForMe] startWithCompletionHandler:
-           ^(FBRequestConnection *connection,
-             NSDictionary<FBGraphUser> *user,
-             NSError *error) {
-             if (!error) {
-               [MBProgressHUD hideHUDForView:self.view animated:YES];
-               [self performSegueWithIdentifier:@"mainSegue" sender:user];
-             }
-           }];
-        }
-      }];
-    }
+  if ([SCKUser currentUser]) {
+     [self performSegueWithIdentifier:@"mainSegue" sender:self];
   } else {
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
   }

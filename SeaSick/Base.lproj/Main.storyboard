@@ -23,6 +23,39 @@
             </objects>
             <point key="canvasLocation" x="360" y="502"/>
         </scene>
+        <!--Debug View Controller-->
+        <scene sceneID="cqG-LV-MrR">
+            <objects>
+                <viewController id="esM-v9-LpR" customClass="SCKDebugViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewb-S9-aAQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xqw-6B-OBs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngq-D8-WyN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mc-PQ-gl5">
+                                <rect key="frame" x="137" y="284" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginClicked:" destination="esM-v9-LpR" eventType="touchUpInside" id="tY7-1l-tno"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginBtn" destination="5mc-PQ-gl5" id="0pw-50-pjj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ee8-cA-HAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360" y="1171"/>
+        </scene>
         <!--Top View Controller-->
         <scene sceneID="cPv-fG-671">
             <objects>
@@ -31,8 +64,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="LVB-YS-i5n" kind="modal" identifier="mainSegue" id="S6J-8f-2zS"/>
                         <segue destination="mhe-I8-eqp" kind="modal" identifier="loginSegue" id="dDn-uF-ioQ"/>
+                        <segue destination="esM-v9-LpR" kind="modal" identifier="mainSegue" id="YRh-KG-0Tk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgY-Cf-jUf" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,13 +7,13 @@
 //
 
 #import "SCKAppDelegate.h"
-#import "SCKLoginViewController.h"
-#import "SCKViewController.h"
+#import <FacebookSDK.h>
 
 @implementation SCKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [self setupMagicalRecord];
   return YES;
 }
 
@@ -55,7 +55,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [[FBSession activeSession] close];
+  [MagicalRecord cleanUp];
+  [[FBSession activeSession] close];
+}
+
+- (void)setupMagicalRecord {
+  // Configure MagicalRecord to use RestKit's Core Data stack
+  [MagicalRecord setupCoreDataStack];
 }
 
 @end

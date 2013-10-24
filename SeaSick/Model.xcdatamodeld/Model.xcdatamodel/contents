@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="SCKAuthentication" representedClassName="SCKAuthentication" isAbstract="YES" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SCKUser" inverseName="authentications" inverseEntity="SCKUser" syncable="YES"/>
+    </entity>
+    <entity name="SCKFacebookAuthentication" representedClassName="SCKFacebookAuthentication" parentEntity="SCKAuthentication" syncable="YES"/>
+    <entity name="SCKUser" representedClassName="SCKUser" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="authentications" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SCKAuthentication" inverseName="user" inverseEntity="SCKAuthentication" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="SCKUser" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SCKAuthentication" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SCKFacebookAuthentication" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

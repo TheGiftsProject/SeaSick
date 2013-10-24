@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		18802F3BB9A14C048A048E99 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C79096DAA940E7A5AB074A /* libPods.a */; };
+		66166B691817F4D2004C379D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66166B681817F4D2004C379D /* CoreData.framework */; };
+		66166B6F1817F50E004C379D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 66166B6D1817F50E004C379D /* Model.xcdatamodeld */; };
 		661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 661DCDA3181549F70004EBBB /* SCKGameServer.m */; };
+		6648CFB8181904A700899442 /* SCKFacebookAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6648CFB7181904A700899442 /* SCKFacebookAuthentication.m */; };
+		6648CFBB181904A700899442 /* SCKAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6648CFBA181904A700899442 /* SCKAuthentication.m */; };
+		6648CFC11819052200899442 /* SCKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6648CFC01819052200899442 /* SCKUser.m */; };
+		6648CFC4181907CF00899442 /* SCKFacebookAuthentication+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 6648CFC3181907CF00899442 /* SCKFacebookAuthentication+Login.m */; };
 		66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4B6371816C5F800CD6C51 /* SCKLoginViewController.m */; };
 		66C4B63B1817E13900CD6C51 /* SCKTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4B63A1817E13900CD6C51 /* SCKTopViewController.m */; };
+		66FE7A5D1817F8A60032DA9E /* SCKUser+CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FE7A5C1817F8A60032DA9E /* SCKUser+CurrentUser.m */; };
+		66FE7A601817FDBE0032DA9E /* SCKDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FE7A5F1817FDBE0032DA9E /* SCKDebugViewController.m */; };
 		941AFC7818154AA900517557 /* SCKGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7718154AA900517557 /* SCKGameState.m */; };
 		941AFC7B18154B0E00517557 /* SCKActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7A18154B0E00517557 /* SCKActor.m */; };
 		941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7D18154B9D00517557 /* SCKBullet.m */; };
@@ -53,12 +61,26 @@
 
 /* Begin PBXFileReference section */
 		46C79096DAA940E7A5AB074A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		66166B681817F4D2004C379D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		66166B6E1817F50E004C379D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		661DCDA2181549F70004EBBB /* SCKGameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameServer.h; path = Services/SCKGameServer.h; sourceTree = "<group>"; };
 		661DCDA3181549F70004EBBB /* SCKGameServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameServer.m; path = Services/SCKGameServer.m; sourceTree = "<group>"; };
+		6648CFB6181904A700899442 /* SCKFacebookAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKFacebookAuthentication.h; path = Models/SCKFacebookAuthentication.h; sourceTree = "<group>"; };
+		6648CFB7181904A700899442 /* SCKFacebookAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKFacebookAuthentication.m; path = Models/SCKFacebookAuthentication.m; sourceTree = "<group>"; };
+		6648CFB9181904A700899442 /* SCKAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKAuthentication.h; path = Models/SCKAuthentication.h; sourceTree = "<group>"; };
+		6648CFBA181904A700899442 /* SCKAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKAuthentication.m; path = Models/SCKAuthentication.m; sourceTree = "<group>"; };
+		6648CFBF1819052200899442 /* SCKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKUser.h; path = Models/SCKUser.h; sourceTree = "<group>"; };
+		6648CFC01819052200899442 /* SCKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKUser.m; path = Models/SCKUser.m; sourceTree = "<group>"; };
+		6648CFC2181907CF00899442 /* SCKFacebookAuthentication+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SCKFacebookAuthentication+Login.h"; path = "Models/SCKFacebookAuthentication+Login.h"; sourceTree = "<group>"; };
+		6648CFC3181907CF00899442 /* SCKFacebookAuthentication+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SCKFacebookAuthentication+Login.m"; path = "Models/SCKFacebookAuthentication+Login.m"; sourceTree = "<group>"; };
 		66C4B6361816C5F800CD6C51 /* SCKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKLoginViewController.h; sourceTree = "<group>"; };
 		66C4B6371816C5F800CD6C51 /* SCKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKLoginViewController.m; sourceTree = "<group>"; };
 		66C4B6391817E13900CD6C51 /* SCKTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKTopViewController.h; sourceTree = "<group>"; };
 		66C4B63A1817E13900CD6C51 /* SCKTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKTopViewController.m; sourceTree = "<group>"; };
+		66FE7A5B1817F8A60032DA9E /* SCKUser+CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SCKUser+CurrentUser.h"; path = "Models/SCKUser+CurrentUser.h"; sourceTree = "<group>"; };
+		66FE7A5C1817F8A60032DA9E /* SCKUser+CurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SCKUser+CurrentUser.m"; path = "Models/SCKUser+CurrentUser.m"; sourceTree = "<group>"; };
+		66FE7A5E1817FDBE0032DA9E /* SCKDebugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKDebugViewController.h; sourceTree = "<group>"; };
+		66FE7A5F1817FDBE0032DA9E /* SCKDebugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKDebugViewController.m; sourceTree = "<group>"; };
 		941AFC7618154AA900517557 /* SCKGameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameState.h; path = Models/SCKGameState.h; sourceTree = "<group>"; };
 		941AFC7718154AA900517557 /* SCKGameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameState.m; path = Models/SCKGameState.m; sourceTree = "<group>"; };
 		941AFC7918154B0E00517557 /* SCKActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKActor.h; path = Models/SCKActor.h; sourceTree = "<group>"; };
@@ -108,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66166B691817F4D2004C379D /* CoreData.framework in Frameworks */,
 				94F379801815623000CE61F2 /* CoreMotion.framework in Frameworks */,
 				94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */,
 				94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */,
@@ -142,6 +165,12 @@
 		941AFC7518154A8000517557 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6648CFBF1819052200899442 /* SCKUser.h */,
+				6648CFC01819052200899442 /* SCKUser.m */,
+				6648CFB9181904A700899442 /* SCKAuthentication.h */,
+				6648CFBA181904A700899442 /* SCKAuthentication.m */,
+				6648CFB6181904A700899442 /* SCKFacebookAuthentication.h */,
+				6648CFB7181904A700899442 /* SCKFacebookAuthentication.m */,
 				941AFC7618154AA900517557 /* SCKGameState.h */,
 				941AFC7718154AA900517557 /* SCKGameState.m */,
 				941AFC7918154B0E00517557 /* SCKActor.h */,
@@ -150,6 +179,10 @@
 				941AFC7D18154B9D00517557 /* SCKBullet.m */,
 				941AFC7F18154BC800517557 /* SCKShip.h */,
 				941AFC8018154BC800517557 /* SCKShip.m */,
+				66FE7A5B1817F8A60032DA9E /* SCKUser+CurrentUser.h */,
+				66FE7A5C1817F8A60032DA9E /* SCKUser+CurrentUser.m */,
+				6648CFC2181907CF00899442 /* SCKFacebookAuthentication+Login.h */,
+				6648CFC3181907CF00899442 /* SCKFacebookAuthentication+Login.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -177,6 +210,7 @@
 		94DBE0BC1815479800E7F595 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66166B681817F4D2004C379D /* CoreData.framework */,
 				94F3797F1815623000CE61F2 /* CoreMotion.framework */,
 				94DBE0BD1815479800E7F595 /* Foundation.framework */,
 				94DBE0BF1815479800E7F595 /* CoreGraphics.framework */,
@@ -198,6 +232,7 @@
 				94DBE0CE1815479800E7F595 /* SCKAppDelegate.h */,
 				94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */,
 				94DBE0D11815479800E7F595 /* Main.storyboard */,
+				66166B6D1817F50E004C379D /* Model.xcdatamodeld */,
 				94DBE0D41815479800E7F595 /* SCKViewController.h */,
 				94DBE0D51815479800E7F595 /* SCKViewController.m */,
 				94C786E318196D5300C15FE1 /* visitor2.ttf */,
@@ -216,6 +251,8 @@
 				66C4B63A1817E13900CD6C51 /* SCKTopViewController.m */,
 				94C786DE18193A6D00C15FE1 /* SCKHealthBar.h */,
 				94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */,
+				66FE7A5E1817FDBE0032DA9E /* SCKDebugViewController.h */,
+				66FE7A5F1817FDBE0032DA9E /* SCKDebugViewController.m */
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -389,14 +426,21 @@
 				94C786E018193A6D00C15FE1 /* SCKHealthBar.m in Sources */,
 				94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */,
 				66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */,
+				66166B6F1817F50E004C379D /* Model.xcdatamodeld in Sources */,
 				942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */,
+				6648CFC4181907CF00899442 /* SCKFacebookAuthentication+Login.m in Sources */,
+				66FE7A601817FDBE0032DA9E /* SCKDebugViewController.m in Sources */,
 				94F3797C181552FD00CE61F2 /* main.m in Sources */,
 				66C4B63B1817E13900CD6C51 /* SCKTopViewController.m in Sources */,
+				6648CFBB181904A700899442 /* SCKAuthentication.m in Sources */,
+				6648CFB8181904A700899442 /* SCKFacebookAuthentication.m in Sources */,
+				6648CFC11819052200899442 /* SCKUser.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
 				942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */,
 				941AFC7B18154B0E00517557 /* SCKActor.m in Sources */,
 				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
 				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
+				66FE7A5D1817F8A60032DA9E /* SCKUser+CurrentUser.m in Sources */,
 				942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */,
 				661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */,
 			);
@@ -623,6 +667,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		66166B6D1817F50E004C379D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				66166B6E1817F50E004C379D /* Model.xcdatamodel */,
+			);
+			currentVersion = 66166B6E1817F50E004C379D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 94DBE0B21815479800E7F595 /* Project object */;
 }
