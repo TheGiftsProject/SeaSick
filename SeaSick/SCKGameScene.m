@@ -24,6 +24,7 @@
 @property (nonatomic) BOOL accelerating;
 
 @property (nonatomic, strong) NSMutableDictionary *shipNodes; // ship node by id
+@property (nonatomic, strong) NSMutableDictionary *bulletNodes; // bullet node by id
 
 @end
 
@@ -44,6 +45,7 @@
         [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
         
         self.shipNodes = [NSMutableDictionary new];
+        self.bulletNodes = [NSMutableDictionary new];
 
         self.motionManager = [CMMotionManager new];
 
@@ -93,6 +95,11 @@
     [shipNode setRotation:CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction)];
 }
 
+- (void) updateBulletNode:(SCKBulletNode *)bulletNode fromBullet:(SCKBullet *)bullet
+{
+    bulletNode.position = [self gamePointToCGPoint:bullet.position];
+}
+
 - (void)setGameState:(SCKGameState *)gameState
 {
     _gameState = gameState;
@@ -119,21 +126,55 @@
         }
     }
     
+    
     self.shipNodes = newDict;
-    
-    
     //NSLog(@"SCK Scene got %d ships", self.gameState.ships.count);
     
+
+    newDict = [NSMutableDictionary new];
     for (SCKBullet *bullet in self.gameState.bullets) {
-        SCKBulletNode *bulletNode = [[SCKBulletNode alloc] init];
         
-        bulletNode.position = [self gamePointToCGPoint:bullet.position];
-        
-        [self.gameLayer addChild:bulletNode];
+        SCKBulletNode *bulletNode = self.bulletNodes[@(bullet.Id)];
+        if (!bulletNode) {
+            NSLog(@"Creating new bullet node with id %d", bullet.Id);
+            bulletNode = [[SCKBulletNode alloc] init];
+            [self updateBulletNode:bulletNode fromBullet:bullet];
+            [self.gameLayer addChild:bulletNode];
+            newDict[@(bullet.Id)] = bulletNode;
+        }
+        else {
+            [self updateBulletNode:bulletNode fromBullet:bullet];
+            newDict[@(bullet.Id)] = bulletNode;
+        }
+
     }
     
-    //NSLog(@"SCK Scene got %d bullets", self.gameState.bullets.count);
+    self.bulletNodes = newDict;
     
+    
+    // Remove unnecessary nodes
+    for (CCNode* node in self.gameLayer.children) {
+        BOOL found = NO;
+        for (SCKShipNode *shipNode in [self.shipNodes allValues]) {
+            if (shipNode == node) {
+                found = YES;
+                break;
+            }
+        }
+        
+        if (!found) {
+            for (SCKBulletNode *bulletNode in [self.bulletNodes allValues]) {
+                if (bulletNode == node) {
+                    found = YES;
+                    break;
+                }
+            }
+        }
+        
+        if (!found) {
+            [node removeFromParentAndCleanup:YES];
+        }
+    }
     
 }
 
