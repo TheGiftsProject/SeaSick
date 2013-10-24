@@ -11,6 +11,7 @@
 #import "Models/SCKShip.h"
 #import "Models/SCKBullet.h"
 #import "Models/SCKGameState.h"
+#import <SimpleAudioEngine.h>
 
 #import "cocos2d.h"
 
@@ -64,7 +65,9 @@
 
 - (void)viewDidLoad
 {
+   
     [super viewDidLoad];
+    [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"Run 4 Your Lives.mp3" loop:YES];
     self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
     [self.gameServer start:self];
     
