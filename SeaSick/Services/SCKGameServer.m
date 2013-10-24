@@ -8,6 +8,7 @@
 
 #import "SCKGameServer.h"
 #import "../Models/SCKShip.h"
+#import "../Models/SCKBullet.h"
 #import <Underscore.h>
 
 @interface SCKGameServer ()
@@ -59,6 +60,7 @@
 -(void)updateGameState:(NSDictionary*)updateData {
   SCKGameState *newGameState = [SCKGameState new];
   
+  newGameState.bullets = [SCKBullet fromJSONArray:updateData[@"bullets"]];
   newGameState.ships = [SCKShip fromJSONArray:updateData[@"ships"]];
   newGameState.playerShipId = [updateData[@"playerShipId"] intValue];
 

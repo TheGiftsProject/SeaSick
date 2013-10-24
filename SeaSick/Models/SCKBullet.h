@@ -10,4 +10,7 @@
 
 @interface SCKBullet : SCKActor
 
++(SCKBullet*)fromJSON:(NSDictionary *)json;
++(NSArray*)fromJSONArray:(NSArray *)jsonArray;
+
 @end
