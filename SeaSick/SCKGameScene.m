@@ -91,7 +91,9 @@
 
 - (void) updateShipNode:(SCKShipNode *)shipNode fromShip:(SCKShip *)ship
 {
+    shipNode.visible = (ship.health > 0);
     shipNode.position = [self gamePointToCGPoint:ship.position];
+    shipNode.ship = ship;
     [shipNode setRotation:CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction)];
 }
 
@@ -117,7 +119,7 @@
             if (ship.Id == self.gameState.playerShipId) {
                 self.myShip = ship;
                 self.myShipNode = shipNode;
-                self.myShipNode.color = ccc4(255, 255, 255, 255);
+                shipNode.isMyShip = YES;
             }
         }
         else {

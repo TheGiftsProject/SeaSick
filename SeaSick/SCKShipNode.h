@@ -7,11 +7,11 @@
 //
 
 #import "CCNode.h"
+#import "SCKShip.h"
 
 @interface SCKShipNode : CCNode
 
 @property (nonatomic) BOOL isMyShip;
-@property (nonatomic) ccColor4B color;
-
+@property (nonatomic, strong) SCKShip* ship;
 
 @end
