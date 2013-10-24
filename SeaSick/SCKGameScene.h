@@ -22,7 +22,6 @@
 
 @interface SCKGameScene : CCScene <CCTouchOneByOneDelegate>
 
-@property (nonatomic, strong) CCLayer *gameLayer;
 
 @property (strong, nonatomic) SCKGameState* gameState;
 @property (nonatomic) BOOL playerPerspective;

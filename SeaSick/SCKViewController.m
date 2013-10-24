@@ -60,6 +60,11 @@
   [self.director runWithScene:self.scene];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];

@@ -18,6 +18,7 @@
 		942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C161816AAA800D0D375 /* SCKGameScene.m */; };
 		942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C191816B6DA00D0D375 /* SCKShipNode.m */; };
 		942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C1C1816C37500D0D375 /* SCKBulletNode.m */; };
+		94C786E018193A6D00C15FE1 /* SCKHealthBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */; };
 		94DBE0BE1815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
 		94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BF1815479800E7F595 /* CoreGraphics.framework */; };
 		94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
@@ -69,6 +70,8 @@
 		942C7C191816B6DA00D0D375 /* SCKShipNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKShipNode.m; sourceTree = "<group>"; };
 		942C7C1B1816C37500D0D375 /* SCKBulletNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKBulletNode.h; sourceTree = "<group>"; };
 		942C7C1C1816C37500D0D375 /* SCKBulletNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKBulletNode.m; sourceTree = "<group>"; };
+		94C786DE18193A6D00C15FE1 /* SCKHealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKHealthBar.h; sourceTree = "<group>"; };
+		94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKHealthBar.m; sourceTree = "<group>"; };
 		94DBE0BA1815479800E7F595 /* SeaSick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaSick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DBE0BD1815479800E7F595 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DBE0BF1815479800E7F595 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -202,6 +205,8 @@
 				942C7C1C1816C37500D0D375 /* SCKBulletNode.m */,
 				66C4B6391817E13900CD6C51 /* SCKTopViewController.h */,
 				66C4B63A1817E13900CD6C51 /* SCKTopViewController.m */,
+				94C786DE18193A6D00C15FE1 /* SCKHealthBar.h */,
+				94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */,
+				94C786E018193A6D00C15FE1 /* SCKHealthBar.m in Sources */,
 				94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */,
 				66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */,
 				942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */,

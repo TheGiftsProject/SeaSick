@@ -13,10 +13,14 @@
 #import "SCKBulletNode.h"
 #import "Models/SCKShip.h"
 #import "Models/SCKBullet.h"
+#import "SCKHealthBar.h"
 
 
 @interface SCKGameScene()
 @property (nonatomic, strong) CMMotionManager *motionManager;
+
+@property (nonatomic, strong) CCLayer *gameLayer;
+@property (nonatomic, strong) CCLayer *statusLayer;
 
 @property (nonatomic, strong) SCKShip *myShip;
 @property (nonatomic, strong) SCKShipNode *myShipNode;
@@ -25,6 +29,8 @@
 
 @property (nonatomic, strong) NSMutableDictionary *shipNodes; // ship node by id
 @property (nonatomic, strong) NSMutableDictionary *bulletNodes; // bullet node by id
+
+@property (nonatomic, strong) SCKHealthBar *healthBar;
 
 @end
 
@@ -40,6 +46,10 @@
         self.gameLayer = [[CCLayer alloc] init];
         [self addChild:self.gameLayer];
         
+        self.statusLayer = [[CCLayer alloc] init];
+        [self addChild:self.statusLayer];
+        self.statusLayer.zOrder = 100;
+        
         [self scheduleUpdate];
         
         [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
@@ -48,6 +58,11 @@
         self.bulletNodes = [NSMutableDictionary new];
 
         self.motionManager = [CMMotionManager new];
+        
+        self.healthBar = [SCKHealthBar new];
+        self.healthBar.position = ccp(self.boundingBox.size.width - HEALTH_BAR_WIDTH/2.0f - 5.0f,
+                                      self.boundingBox.size.height - HEALTH_BAR_HEIGHT/2.0f - 5.0f);
+        [self.statusLayer addChild:self.healthBar];
 
         [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
             if (error) {
@@ -91,10 +106,10 @@
 
 - (void) updateShipNode:(SCKShipNode *)shipNode fromShip:(SCKShip *)ship
 {
+    shipNode.ship = ship;
     shipNode.visible = (ship.health > 0);
     shipNode.position = [self gamePointToCGPoint:ship.position];
-    shipNode.ship = ship;
-    [shipNode setRotation:CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction)];
+    shipNode.rotation = CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction);
 }
 
 - (void) updateBulletNode:(SCKBulletNode *)bulletNode fromBullet:(SCKBullet *)bullet
@@ -125,6 +140,10 @@
         else {
             [self updateShipNode:shipNode fromShip:ship];
             newDict[@(ship.Id)] = shipNode;
+          
+          if (ship.Id == self.gameState.playerShipId) {
+            self.healthBar.health = ship.health;
+          }
         }
     }
     
