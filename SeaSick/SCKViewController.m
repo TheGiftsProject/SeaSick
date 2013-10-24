@@ -14,7 +14,7 @@
 
 #import "cocos2d.h"
 
-#define GAME_SERVER_URL @"ws://192.168.2.226:8088"
+#define GAME_SERVER_URL @"ws://192.168.2.55:8088"
 
 #define WHY_NOT YES
 #define HELL_NO NO
@@ -76,9 +76,13 @@
   self.scene.gameState = gameState;
 }
 
-- (void)myShipStateChanged:(SCKShip *)myShip
+- (void) myShipDirectionChanged:(SCKShip *)myShip
 {
-  [self.gameServer updateShipState:myShip];
+    [self.gameServer updateShipDirection:myShip];
+}
+- (void) myShipDirectionAccelChanged:(SCKShip *)myShip accel:(BOOL)accel
+{
+    [self.gameServer updateShip:myShip accelerating:accel];
 }
 
 - (void)fire {

@@ -69,6 +69,24 @@
 }
 
 
+- (void) updateShipDirection:(SCKShip *)ship {
+    NSError *error = nil;
+    NSDictionary *shipDirectionMessage = @{@"action": @"shipDirection",
+                                        @"params": @{@"direction": @(ship.direction) }};
+    NSData *data = [NSJSONSerialization dataWithJSONObject:shipDirectionMessage options:0 error:&error];
+    
+    [self.socket send:data];
+}
+
+- (void) updateShip:(SCKShip *)ship accelerating:(BOOL)accel {
+    NSError *error = nil;
+    NSDictionary *shipAccelMessage = @{@"action": @"shipAccelerator",
+                                        @"params": @{@"accelerating": @(accel) }};
+    NSData *data = [NSJSONSerialization dataWithJSONObject:shipAccelMessage options:0 error:&error];
+    
+    [self.socket send:data];
+}
+
 -(void)updateShipState:(SCKShip *)ship {
   NSError *error = nil;
   NSDictionary *shipStatusMessage = @{@"action": @"shipStatus",

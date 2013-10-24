@@ -21,6 +21,8 @@
 
 -(SCKGameServer*)initWithURL:(NSString *)url;
 -(void)start:(id<SCKGameUpdateDelegate>)delegate;
--(void)updateShipState:(SCKShip *)ship;
+- (void) updateShipDirection:(SCKShip *)ship;
+
+- (void) updateShip:(SCKShip *)ship accelerating:(BOOL)accel;
 
 @end

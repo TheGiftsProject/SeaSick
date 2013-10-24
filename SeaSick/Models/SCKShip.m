@@ -37,12 +37,13 @@
 }
 
 -(NSDictionary*)toJSONDictionary {
-  NSDictionary *dict = [NSMutableDictionary new];
-  [dict setValue:[NSNumber numberWithInt:self.Id] forKey:@"id"];
-  [dict setValue:[NSNumber numberWithInt:self.score] forKey:@"score"];
-  [dict setValue:[NSNumber numberWithInt:self.health] forKey:@"health"];
-  [dict setValue:@[[NSNumber numberWithInt:self.velocity.x], [NSNumber numberWithInt:self.velocity.y]] forKey:@"velocity"];
-  [dict setValue:@[[NSNumber numberWithInt:self.position.x], [NSNumber numberWithInt:self.position.y]] forKey:@"position"];
+  NSMutableDictionary *dict = [NSMutableDictionary new];
+    dict[@"id"] = @(self.Id);
+    dict[@"score"] = @(self.score);
+    dict[@"health"] = @(self.health);
+    dict[@"velocity"] = @[@(self.velocity.x), @(self.velocity.y)];
+    dict[@"position"] = @[@(self.position.x), @(self.position.y)];
+    dict[@"direction"] = @(self.direction);
   return dict;
 }
 

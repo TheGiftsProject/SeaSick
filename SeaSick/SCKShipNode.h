@@ -8,9 +8,10 @@
 
 #import "CCNode.h"
 
-
 @interface SCKShipNode : CCNode
 
 @property (nonatomic) BOOL isMyShip;
+@property (nonatomic) ccColor4B color;
+
 
 @end

@@ -15,7 +15,8 @@
 @protocol SCKSceneDelegate <NSObject>
 
 - (void) fire;
-- (void) myShipStateChanged:(SCKShip *)myShip;
+- (void) myShipDirectionChanged:(SCKShip *)myShip;
+- (void) myShipDirectionAccelChanged:(SCKShip *)myShip accel:(BOOL)accel;
 
 @end
 
