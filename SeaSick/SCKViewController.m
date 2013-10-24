@@ -15,7 +15,7 @@
 #import "MBProgressHUD.h"
 #import "cocos2d.h"
 
-#define GAME_SERVER_URL @"ws://192.168.2.55:8088"
+#define GAME_SERVER_URL @"ws://127.0.0.1:8088"
 
 #define WHY_NOT YES
 #define HELL_NO NO
@@ -40,6 +40,7 @@
                 sharegroup:nil
                multiSampling:NO
                numberOfSamples:0];
+
   
   self.director = (CCDirectorIOS*)[CCDirector sharedDirector];
   
@@ -56,13 +57,14 @@
   
   self.scene = [SCKGameScene new];
   self.scene.delegate = self;
+  self.scene.playerName = self.playerName;
   
   [self.director runWithScene:self.scene];
 }
 
 - (BOOL)prefersStatusBarHidden
 {
-    return YES;
+  return YES;
 }
 
 - (void)viewDidLoad

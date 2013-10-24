@@ -22,7 +22,7 @@
 
 @interface SCKGameScene : CCScene <CCTouchOneByOneDelegate>
 
-
+@property (strong, nonatomic) NSString *playerName;
 @property (strong, nonatomic) SCKGameState* gameState;
 @property (nonatomic) BOOL playerPerspective;
 @property (nonatomic, strong) id<SCKSceneDelegate> delegate;
