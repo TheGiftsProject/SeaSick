@@ -60,14 +60,6 @@
   }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if([sender isKindOfClass:[SCKLoginViewController class]]) {
-    SCKViewController *viewController = [segue destinationViewController];
-    NSDictionary<FBGraphUser> *user = (NSDictionary<FBGraphUser> *)sender;
-    viewController.playerName = user.name;
-  }
-}
-
 - (SCKAppDelegate *)appDelegate {
   if (!_appDelegate) {
     _appDelegate = [[UIApplication sharedApplication]delegate];
