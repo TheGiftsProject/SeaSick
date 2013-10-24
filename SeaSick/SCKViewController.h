@@ -11,7 +11,7 @@
 #import "Services/SCKGameServer.h"
 #import "SCKGameScene.h"
 
-@interface SCKViewController : UIViewController<SCKGameUpdateDelegate, SCKSceneDelegate>
+@interface SCKViewController : UIViewController<SCKGameServerDelegate, SCKSceneDelegate>
 
 @property (nonatomic, strong) NSString* playerName;
 

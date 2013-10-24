@@ -15,14 +15,15 @@
 
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) SRWebSocket *socket;
-@property (strong, nonatomic) id<SCKGameUpdateDelegate> delegate;
+@property (strong, nonatomic) id<SCKGameServerDelegate> delegate;
 @property (nonatomic) dispatch_queue_t dq;
 
 @end
 
 @implementation SCKGameServer
 
--(SCKGameServer*)initWithURL:(NSString*)url {
+-(SCKGameServer*)initWithURL:(NSString*)url
+{
   self = [super init];
   if (self) {
     self.url = url;
@@ -35,19 +36,32 @@
   return self;
 }
 
-- (void)start:(id<SCKGameUpdateDelegate>)delegate {
-  self.delegate = delegate;
-  [self.socket open];
+- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
+{
+  NSLog(@"WebSocket closed");
+  if ([self.delegate respondsToSelector:@selector(clientDidDisconnect:)]) {
+    [self.delegate clientDidDisconnect:ClientDisconnected];
+  }
+}
+
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket
+{
+  NSLog(@"Websocket Connected");
+  if ([self.delegate respondsToSelector:@selector(clientDidConnect)]) {
+    [self.delegate clientDidConnect];
+  }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
 {
   NSLog(@":( Websocket Failed With Error %@", error);
+  if ([self.delegate respondsToSelector:@selector(clientDidDisconnect:)]) {
+    [self.delegate clientDidDisconnect:SocketError];
+  }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
-  //NSLog(@"Received \"%@\"", message);
   NSString* messageString = (NSString*)message;
   NSData *data = [messageString dataUsingEncoding:NSUTF8StringEncoding];
   NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: nil];
@@ -57,7 +71,18 @@
   }
 }
 
--(void)updateGameState:(NSDictionary*)updateData {
+- (void)start:(id<SCKGameServerDelegate>)delegate
+{
+  self.delegate = delegate;
+  [self.socket open];
+}
+
+- (void)reconnect {
+  [self.socket open];
+}
+
+-(void)updateGameState:(NSDictionary*)updateData
+{
   SCKGameState *newGameState = [SCKGameState new];
   
   newGameState.bullets = [SCKBullet fromJSONArray:updateData[@"bullets"]];
@@ -65,56 +90,35 @@
   newGameState.playerShipId = [updateData[@"playerShipId"] intValue];
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [self.delegate setGameState:newGameState];
+    if ([self.delegate respondsToSelector:@selector(newGameStateReceived:)]) {
+      [self.delegate newGameStateReceived:newGameState];
+    }
   });
-  
 }
 
-
-- (void) updateShipDirection:(SCKShip *)ship {
-    NSError *error = nil;
-    NSDictionary *shipDirectionMessage = @{@"action": @"shipDirection",
-                                        @"params": @{@"direction": @(ship.direction) }};
-    NSData *data = [NSJSONSerialization dataWithJSONObject:shipDirectionMessage options:0 error:&error];
-    
-    [self.socket send:data];
+- (void)updateShipDirection:(SCKShip *)ship
+{
+  [self sendMessage:@"shipDirection" withMessageData:@{@"direction": @(ship.direction) }];
 }
 
-- (void) updateShip:(SCKShip *)ship accelerating:(BOOL)accel {
-    NSError *error = nil;
-    NSDictionary *shipAccelMessage = @{@"action": @"shipAccelerator",
-                                        @"params": @{@"accelerating": @(accel) }};
-    NSData *data = [NSJSONSerialization dataWithJSONObject:shipAccelMessage options:0 error:&error];
-    
-    [self.socket send:data];
+- (void)updateShip:(SCKShip *)ship accelerating:(BOOL)accel
+{
+  [self sendMessage:@"shipAccelerator" withMessageData:@{@"accelerating": @(accel) }];
 }
 
--(void)updateShipState:(SCKShip *)ship {
-  NSError *error = nil;
-  NSDictionary *shipStatusMessage = @{@"action": @"shipStatus",
-                                      @"params": [ship toJSONDictionary]};
-  NSData *data = [NSJSONSerialization dataWithJSONObject:shipStatusMessage options:0 error:&error];
-
-  [self.socket send:data];
+- (void)updateShipState:(SCKShip *)ship {
+  [self sendMessage:@"shipStatus" withMessageData:[ship toJSONDictionary]];
 }
 
 - (void)shipFired {
-    NSError *error = nil;
-    NSDictionary *shipFiredMessage = @{@"action": @"shipFired"}; // PEW!
-    NSData *data = [NSJSONSerialization dataWithJSONObject:shipFiredMessage options:0 error:&error];
-    
-    [self.socket send:data];
+  [self sendMessage:@"shipFired" withMessageData:@""];
 }
 
-- (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
-{
-  NSLog(@"WebSocket closed");
+- (void)sendMessage:(NSString *)messageId withMessageData:(id)messageData {
+  NSError *error = nil;
+  NSDictionary *message = @{@"action": messageId, @"params": messageData};
+  NSData *data = [NSJSONSerialization dataWithJSONObject:message options:0 error:&error];
+  [self.socket send:data];
 }
-
-- (void)webSocketDidOpen:(SRWebSocket *)webSocket
-{
-  NSLog(@"Websocket Connected");
-}
-
 
 @end

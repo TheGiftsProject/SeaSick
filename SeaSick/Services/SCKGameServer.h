@@ -11,16 +11,24 @@
 #import "../Models/SCKGameState.h"
 #import "../Models/SCKShip.h"
 
-@protocol SCKGameUpdateDelegate <NSObject>
+typedef enum SCKGameServerClientDisconnectType {
+  SocketError,
+  ClientDisconnected
+} SCKGameServerClientDisconnectType;
 
--(void)setGameState:(SCKGameState *)gameState;
+@protocol SCKGameServerDelegate <NSObject>
+
+-(void)newGameStateReceived:(SCKGameState *)gameState;
+-(void)clientDidConnect;
+-(void)clientDidDisconnect:(SCKGameServerClientDisconnectType)disconnectType;
 
 @end
 
 @interface SCKGameServer : NSObject<SRWebSocketDelegate>
 
 -(SCKGameServer*)initWithURL:(NSString *)url;
--(void)start:(id<SCKGameUpdateDelegate>)delegate;
+-(void)start:(id<SCKGameServerDelegate>)delegate;
+-(void)reconnect;
 - (void) updateShipDirection:(SCKShip *)ship;
 
 - (void) updateShip:(SCKShip *)ship accelerating:(BOOL)accel;

@@ -82,7 +82,7 @@
 		94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCKAppDelegate.m; sourceTree = "<group>"; };
 		94DBE0D21815479800E7F595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94DBE0D41815479800E7F595 /* SCKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCKViewController.h; sourceTree = "<group>"; };
-		94DBE0D51815479800E7F595 /* SCKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCKViewController.m; sourceTree = "<group>"; };
+		94DBE0D51815479800E7F595 /* SCKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCKViewController.m; sourceTree = "<group>"; usesTabs = 0; };
 		94DBE0DC1815479800E7F595 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		94DBE0E21815479800E7F595 /* SeaSickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeaSickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DBE0E31815479800E7F595 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };

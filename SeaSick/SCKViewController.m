@@ -12,7 +12,7 @@
 #import "Models/SCKBullet.h"
 #import "Models/SCKGameState.h"
 #import <SimpleAudioEngine.h>
-
+#import "MBProgressHUD.h"
 #import "cocos2d.h"
 
 #define GAME_SERVER_URL @"ws://192.168.2.55:8088"
@@ -25,83 +25,94 @@
 
 @property (nonatomic, strong) SCKGameScene* scene;
 @property (nonatomic, strong) SCKGameServer* gameServer;
-
 @property (nonatomic, weak) CCDirectorIOS *director;
 
 @end
 
 @implementation SCKViewController
 
-
-
 - (void) initCocos
 {
-    CCGLView *glView = [CCGLView viewWithFrame:self.view.bounds
-								   pixelFormat:kEAGLColorFormatRGBA8
-								   depthFormat:0
-							preserveBackbuffer:NO
-									sharegroup:nil
-								 multiSampling:NO
-							   numberOfSamples:0];
-    
-    self.director = (CCDirectorIOS*)[CCDirector sharedDirector];
-    
-    self.director.displayStats = YES;
-    self.director.animationInterval = 1.0/60.0;
-    self.director.view = glView;
-    
-    self.director.projection = kCCDirectorProjection2D;
-    
-    [self.director enableRetinaDisplay:WHY_NOT];
-    [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
-    
-    [self.view addSubview:glView];
-    
-    self.scene = [[SCKGameScene alloc] init];
-    self.scene.delegate = self;
-    
-    [self.director runWithScene:self.scene];
+  CCGLView *glView = [CCGLView viewWithFrame:self.view.bounds
+                 pixelFormat:kEAGLColorFormatRGBA8
+                 depthFormat:0
+            preserveBackbuffer:NO
+                sharegroup:nil
+               multiSampling:NO
+               numberOfSamples:0];
+  
+  self.director = (CCDirectorIOS*)[CCDirector sharedDirector];
+  
+  self.director.displayStats = YES;
+  self.director.animationInterval = 1.0/60.0;
+  self.director.view = glView;
+  
+  self.director.projection = kCCDirectorProjection2D;
+  
+  [self.director enableRetinaDisplay:WHY_NOT];
+  [CCTexture2D setDefaultAlphaPixelFormat:kCCTexture2DPixelFormat_RGBA8888];
+  
+  [self.view addSubview:glView];
+  
+  self.scene = [SCKGameScene new];
+  self.scene.delegate = self;
+  
+  [self.director runWithScene:self.scene];
 }
 
 - (void)viewDidLoad
 {
-   
-    [super viewDidLoad];
-    [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"Run 4 Your Lives.mp3" loop:YES];
-    self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
-    [self.gameServer start:self];
-    
-    [self initCocos];
-
+  [super viewDidLoad];
+  [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"Run 4 Your Lives.mp3" loop:YES];
+  self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
+  [self.gameServer start:self];
+  
+  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  hud.labelText = @"Connecting to Server";
+  [self initCocos];
 }
 
-- (void)setGameState:(SCKGameState *)gameState {
+- (void)newGameStateReceived:(SCKGameState *)gameState
+{
   self.scene.gameState = gameState;
 }
 
-- (void) myShipDirectionChanged:(SCKShip *)myShip
+- (void)clientDidConnect
 {
-    [self.gameServer updateShipDirection:myShip];
-}
-- (void) myShipDirectionAccelChanged:(SCKShip *)myShip accel:(BOOL)accel
-{
-    [self.gameServer updateShip:myShip accelerating:accel];
+  [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
-- (void)fire {
-    [self.gameServer shipFired]; // PEW!
+- (void)clientDidDisconnect:(SCKGameServerClientDisconnectType)disconnectType
+{
+  if(disconnectType == SocketError) {
+    //Trying to reconnect
+    [self.gameServer reconnect];
+  }
 }
 
+- (void)myShipDirectionChanged:(SCKShip *)myShip
+{
+  [self.gameServer updateShipDirection:myShip];
+}
+
+- (void)myShipDirectionAccelChanged:(SCKShip *)myShip accel:(BOOL)accel
+{
+  [self.gameServer updateShip:myShip accelerating:accel];
+}
+
+- (void)fire
+{
+  [self.gameServer shipFired];
+}
 
 - (BOOL)shouldAutorotate
 {
-    return NO;
+  return NO;
 }
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    return UIInterfaceOrientationMaskPortrait;
+  return UIInterfaceOrientationMaskPortrait;
 }
-
 
 @end
