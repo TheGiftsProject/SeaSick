@@ -73,8 +73,6 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [[SimpleAudioEngine sharedEngine]setBackgroundMusicVolume:0.3];
-  [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"background.mp3" loop:YES];
   self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
   [self.gameServer start:self];
   

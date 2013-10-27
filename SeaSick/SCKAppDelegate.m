@@ -9,11 +9,16 @@
 #import "SCKAppDelegate.h"
 #import "SCKLoginViewController.h"
 #import "SCKViewController.h"
+#import <SimpleAudioEngine.h>
+
 
 @implementation SCKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [[SimpleAudioEngine sharedEngine]setBackgroundMusicVolume:0.3];
+  [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"background.mp3" loop:YES];
+  
   return YES;
 }
 
@@ -37,6 +42,8 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+  [[CCDirector sharedDirector] pause];
+  [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
