@@ -17,7 +17,7 @@
 
 
 
-#define GAME_SERVER_URL @"ws://127.0.0.1:8088"
+#define GAME_SERVER_URL @"ws://seasick.herokuapp.com"
 
 
 #define WHY_NOT YES
@@ -73,6 +73,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  [[SimpleAudioEngine sharedEngine]setBackgroundMusicVolume:0.3];
   [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"background.mp3" loop:YES];
   self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
   [self.gameServer start:self];
@@ -113,11 +114,6 @@
 - (void)fire {
     [[SimpleAudioEngine sharedEngine] playEffect:@"fired.wav"];
     [self.gameServer shipFired]; // PEW!
-}
-
-- (void)fire
-{
-  [self.gameServer shipFired];
 }
 
 - (BOOL)shouldAutorotate
