@@ -11,8 +11,8 @@
 #import "SCKGameScene.h"
 #import "SCKShipNode.h"
 #import "SCKBulletNode.h"
-#import "Models/SCKShip.h"
-#import "Models/SCKBullet.h"
+#import "../Models/SCKShip.h"
+#import "../Models/SCKBullet.h"
 #import "SCKHealthBar.h"
 
 
