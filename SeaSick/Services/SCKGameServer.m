@@ -115,10 +115,13 @@
 }
 
 - (void)sendMessage:(NSString *)messageId withMessageData:(id)messageData {
-  NSError *error = nil;
-  NSDictionary *message = @{@"action": messageId, @"params": messageData};
-  NSData *data = [NSJSONSerialization dataWithJSONObject:message options:0 error:&error];
-  [self.socket send:data];
+  // This condition is here to make sure that we don't send anything before the socket is opened
+  if (self.socket.readyState == SR_OPEN) {
+    NSError *error = nil;
+    NSDictionary *message = @{@"action": messageId, @"params": messageData};
+    NSData *data = [NSJSONSerialization dataWithJSONObject:message options:0 error:&error];
+    [self.socket send:data];
+  }
 }
 
 @end
