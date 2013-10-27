@@ -32,7 +32,10 @@
 
 @property (nonatomic, strong) SCKHealthBar *healthBar;
 @property (nonatomic, strong) CCLabelTTF *scoreLabel;
-
+@property (nonatomic, strong) CCLayerGradient *backgroundLayer;
+@property (nonatomic) GLubyte currentGreenValue;
+@property (nonatomic) BOOL greenValueRising;
+@property (nonatomic) float backgroundDirection;
 @end
 
 @implementation SCKGameScene
@@ -41,10 +44,10 @@
 {
   if (self = [super init]) {
     
-    CCLayerGradient *backgroundLayer = [CCLayerGradient layerWithColor:ccc4(0, 0, 255, 255)
-                                                              fadingTo:ccc4(0, 0, 128, 255)
-                                                           alongVector:ccp(0,-1)];
-    [self addChild:backgroundLayer];
+    self.backgroundLayer = [CCLayerGradient layerWithColor:ccc4(0, 0, 255, 255)
+                                                  fadingTo:ccc4(0, 0, 128, 255)
+                                               alongVector:ccp(0,-1)];
+    [self addChild:self.backgroundLayer];
     
     self.gameLayer = [[CCLayer alloc] init];
     [self addChild:self.gameLayer];
@@ -67,6 +70,15 @@
                                   self.boundingBox.size.height - HEALTH_BAR_HEIGHT/2.0f - 5.0f);
     [self.statusLayer addChild:self.healthBar];
     
+    if (self.scoreLabel) {
+      [self.statusLayer removeChild:self.scoreLabel];
+    }
+    self.scoreLabel = [CCLabelTTF labelWithString:@"Bla" fontName:@"Visitor TT2 BRK" fontSize:10.0f];
+    self.scoreLabel.verticalAlignment = kCCVerticalTextAlignmentTop;
+    self.scoreLabel.horizontalAlignment = kCCTextAlignmentLeft;
+    self.scoreLabel.position = ccp(2.0, self.boundingBox.size.height - 1.0);
+    self.scoreLabel.anchorPoint = ccp(0, 1);
+    [self.statusLayer addChild:self.scoreLabel];
     
     [self.motionManager startDeviceMotionUpdatesUsingReferenceFrame:CMAttitudeReferenceFrameXTrueNorthZVertical toQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
       if (error) {
@@ -121,21 +133,6 @@
   bulletNode.position = [self gamePointToCGPoint:bullet.position];
 }
 
-- (void) updateHUD
-{
-  self.healthBar.health = self.myShip.health;
-  if (self.scoreLabel) {
-    [self.statusLayer removeChild:self.scoreLabel];
-  }
-  NSString *labelString = [NSString stringWithFormat:@"%@ - %d", self.playerName, self.myShip.score];
-  self.scoreLabel = [CCLabelTTF labelWithString:labelString fontName:@"Visitor TT2 BRK" fontSize:10.0f];
-  self.scoreLabel.verticalAlignment = kCCVerticalTextAlignmentTop;
-  self.scoreLabel.horizontalAlignment = kCCTextAlignmentLeft;
-  self.scoreLabel.position = ccp(2.0, self.boundingBox.size.height - 1.0);
-  self.scoreLabel.anchorPoint = ccp(0, 1);
-  [self.statusLayer addChild:self.scoreLabel];
-}
-
 - (void)setGameState:(SCKGameState *)gameState
 {
   _gameState = gameState;
@@ -162,7 +159,6 @@
       
       if (ship.Id == self.gameState.playerShipId) {
         self.myShip = ship;
-        [self updateHUD];
       }
     }
   }
@@ -218,8 +214,47 @@
   
 }
 
--(void)update:(ccTime)delta {
+- (void) updateHUD
+{
+  self.healthBar.health = self.myShip.health;
+  NSString *labelString = [NSString stringWithFormat:@"%@ - %d", self.playerName, self.myShip.score];
+  [self.scoreLabel setString:labelString];
+}
+
+#define GREEN_TOP_LIMIT 150
+#define GREEN_BOTTOM_LIMIT 50
+#define BACKGROUND_CHANGE_RATE 100.0
+
+- (void) updateBackground:(ccTime)delta
+{
+  if (self.greenValueRising) {
+    self.currentGreenValue += (unsigned)floorl(delta * BACKGROUND_CHANGE_RATE);
+    if (self.currentGreenValue >= GREEN_TOP_LIMIT) {
+      self.greenValueRising = !self.greenValueRising;
+    }
+  }
+  else {
+    self.currentGreenValue -= (unsigned)floorl(delta * BACKGROUND_CHANGE_RATE);
+    if (self.currentGreenValue <= GREEN_BOTTOM_LIMIT) {
+      self.greenValueRising = !self.greenValueRising;
+    }
+  }
   
+  self.backgroundDirection += delta * 7.0;
+  
+  if (self.backgroundDirection > (2.0 * M_PI)) {
+    self.backgroundDirection -= (2.0 * M_PI);
+  }
+  
+  self.backgroundLayer.endColor = ccc3(0, self.currentGreenValue, 128);
+  self.backgroundLayer.startColor = ccc3(0, self.currentGreenValue, 255);
+  self.backgroundLayer.vector = ccp(cosf(self.backgroundDirection), sinf(self.backgroundDirection));
+}
+
+-(void)update:(ccTime)delta
+{
+  [self updateHUD];
+  [self updateBackground:delta];
 }
 
 
