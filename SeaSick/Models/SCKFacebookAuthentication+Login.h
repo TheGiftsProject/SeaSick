@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SCKFacebookAuthentication.h"
 #import <FacebookSDK.h>
+#import "SCKFacebookAuthentication.h"
 
 @interface SCKFacebookAuthentication (Login)
 
-+(void)login:(void (^)(NSDictionary<FBGraphUser> *user, NSError *error))loginCallback;
++(void)login:(void (^)(SCKFacebookAuthentication *authentication, NSError *error))loginCallback;
+-(void)logout;
 //+(void)logout;
 
 @end

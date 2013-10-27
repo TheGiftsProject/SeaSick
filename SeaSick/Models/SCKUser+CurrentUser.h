@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "SCKUser.h"
+#import "SCKAuthentication.h"
 
 @interface SCKUser (CurrentUser)
 
-+(SCKUser *)currentUser;
-+(SCKUser *)createUser:(NSString *)name withEmail:(NSString *)email;
+@property (nonatomic, retain, readonly) NSString *email;
+@property (nonatomic, retain, readonly) NSString *name;
+
++ (SCKUser *)currentUser;
++ (SCKUser *)createFromAuthentication:(SCKAuthentication *)authentication;
++ (void)clearCurrentUser;
+- (void)logout;
 
 @end

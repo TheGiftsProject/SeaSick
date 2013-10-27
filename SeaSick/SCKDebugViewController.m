@@ -7,7 +7,7 @@
 //
 
 #import "SCKDebugViewController.h"
-#import <FacebookSDK.h>
+#import "SCKUser+CurrentUser.h"
 
 @interface SCKDebugViewController ()
 
@@ -16,8 +16,7 @@
 @implementation SCKDebugViewController
 
 - (IBAction)loginClicked:(UIButton *)sender {
-  [[FBSession activeSession] closeAndClearTokenInformation];
-  [FBSession setActiveSession:nil];
+    [[SCKUser currentUser] logout];
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 

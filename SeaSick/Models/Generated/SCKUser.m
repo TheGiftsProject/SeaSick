@@ -12,8 +12,6 @@
 
 @implementation SCKUser
 
-@dynamic email;
-@dynamic name;
 @dynamic score;
 @dynamic authentications;
 

@@ -13,9 +13,15 @@
 
 @interface SCKUser : NSManagedObject
 
-@property (nonatomic, retain) NSString * email;
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * score;
-@property (nonatomic, retain) SCKAuthentication *authentications;
+@property (nonatomic, retain) NSSet *authentications;
+@end
+
+@interface SCKUser (CoreDataGeneratedAccessors)
+
+- (void)addAuthenticationsObject:(SCKAuthentication *)value;
+- (void)removeAuthenticationsObject:(SCKAuthentication *)value;
+- (void)addAuthentications:(NSSet *)values;
+- (void)removeAuthentications:(NSSet *)values;
 
 @end

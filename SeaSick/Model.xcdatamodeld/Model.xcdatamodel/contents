@@ -7,10 +7,8 @@
     </entity>
     <entity name="SCKFacebookAuthentication" representedClassName="SCKFacebookAuthentication" parentEntity="SCKAuthentication" syncable="YES"/>
     <entity name="SCKUser" representedClassName="SCKUser" syncable="YES">
-        <attribute name="email" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="authentications" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SCKAuthentication" inverseName="user" inverseEntity="SCKAuthentication" syncable="YES"/>
+        <relationship name="authentications" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SCKAuthentication" inverseName="user" inverseEntity="SCKAuthentication" syncable="YES"/>
     </entity>
     <elements>
         <element name="SCKAuthentication" positionX="0" positionY="0" width="0" height="0"/>

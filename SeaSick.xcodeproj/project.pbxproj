@@ -42,11 +42,11 @@
 		94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D51815479800E7F595 /* SCKViewController.m */; };
 		94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */; };
 		94F379801815623000CE61F2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3797F1815623000CE61F2 /* CoreMotion.framework */; };
-		A104A420181D4525000FE554 /* SCKAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A104A41B181D4525000FE554 /* SCKAuthentication.m */; };
-		A104A421181D4525000FE554 /* SCKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A104A41D181D4525000FE554 /* SCKUser.m */; };
-		A104A422181D4525000FE554 /* SCKFacebookAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A104A41F181D4525000FE554 /* SCKFacebookAuthentication.m */; };
 		A144C07C1819597000CAC9D9 /* fired.wav in Resources */ = {isa = PBXBuildFile; fileRef = A144C07A1819597000CAC9D9 /* fired.wav */; };
 		A144C07D1819597000CAC9D9 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A144C07B1819597000CAC9D9 /* background.mp3 */; };
+		A1EB3231181D4FD1004330B8 /* SCKFacebookAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB3230181D4FD1004330B8 /* SCKFacebookAuthentication.m */; };
+		A1EB3234181D4FD2004330B8 /* SCKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB3233181D4FD2004330B8 /* SCKUser.m */; };
+		A1EB3237181D4FD2004330B8 /* SCKAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EB3236181D4FD2004330B8 /* SCKAuthentication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,14 +114,14 @@
 		94DBE0ED1815479800E7F595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94DBE0EF1815479800E7F595 /* SeaSickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaSickTests.m; sourceTree = "<group>"; };
 		94F3797F1815623000CE61F2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		A104A41A181D4525000FE554 /* SCKAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKAuthentication.h; path = Models/Generated/SCKAuthentication.h; sourceTree = "<group>"; };
-		A104A41B181D4525000FE554 /* SCKAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKAuthentication.m; path = Models/Generated/SCKAuthentication.m; sourceTree = "<group>"; };
-		A104A41C181D4525000FE554 /* SCKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKUser.h; path = Models/Generated/SCKUser.h; sourceTree = "<group>"; };
-		A104A41D181D4525000FE554 /* SCKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKUser.m; path = Models/Generated/SCKUser.m; sourceTree = "<group>"; };
-		A104A41E181D4525000FE554 /* SCKFacebookAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKFacebookAuthentication.h; path = Models/Generated/SCKFacebookAuthentication.h; sourceTree = "<group>"; };
-		A104A41F181D4525000FE554 /* SCKFacebookAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKFacebookAuthentication.m; path = Models/Generated/SCKFacebookAuthentication.m; sourceTree = "<group>"; };
 		A144C07A1819597000CAC9D9 /* fired.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fired.wav; sourceTree = "<group>"; };
 		A144C07B1819597000CAC9D9 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		A1EB322F181D4FD1004330B8 /* SCKFacebookAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKFacebookAuthentication.h; path = Models/Generated/SCKFacebookAuthentication.h; sourceTree = "<group>"; };
+		A1EB3230181D4FD1004330B8 /* SCKFacebookAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKFacebookAuthentication.m; path = Models/Generated/SCKFacebookAuthentication.m; sourceTree = "<group>"; };
+		A1EB3232181D4FD2004330B8 /* SCKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKUser.h; path = Models/Generated/SCKUser.h; sourceTree = "<group>"; };
+		A1EB3233181D4FD2004330B8 /* SCKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKUser.m; path = Models/Generated/SCKUser.m; sourceTree = "<group>"; };
+		A1EB3235181D4FD2004330B8 /* SCKAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKAuthentication.h; path = Models/Generated/SCKAuthentication.h; sourceTree = "<group>"; };
+		A1EB3236181D4FD2004330B8 /* SCKAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKAuthentication.m; path = Models/Generated/SCKAuthentication.m; sourceTree = "<group>"; };
 		C71AE5989D7F498092069E6E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,12 +284,12 @@
 		A104A419181D44EC000FE554 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				A104A41A181D4525000FE554 /* SCKAuthentication.h */,
-				A104A41B181D4525000FE554 /* SCKAuthentication.m */,
-				A104A41C181D4525000FE554 /* SCKUser.h */,
-				A104A41D181D4525000FE554 /* SCKUser.m */,
-				A104A41E181D4525000FE554 /* SCKFacebookAuthentication.h */,
-				A104A41F181D4525000FE554 /* SCKFacebookAuthentication.m */,
+				A1EB3235181D4FD2004330B8 /* SCKAuthentication.h */,
+				A1EB3236181D4FD2004330B8 /* SCKAuthentication.m */,
+				A1EB3232181D4FD2004330B8 /* SCKUser.h */,
+				A1EB3233181D4FD2004330B8 /* SCKUser.m */,
+				A1EB322F181D4FD1004330B8 /* SCKFacebookAuthentication.h */,
+				A1EB3230181D4FD1004330B8 /* SCKFacebookAuthentication.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -437,17 +437,17 @@
 				66166B6F1817F50E004C379D /* Model.xcdatamodeld in Sources */,
 				942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */,
 				6648CFC4181907CF00899442 /* SCKFacebookAuthentication+Login.m in Sources */,
+				A1EB3237181D4FD2004330B8 /* SCKAuthentication.m in Sources */,
 				66FE7A601817FDBE0032DA9E /* SCKDebugViewController.m in Sources */,
 				94F3797C181552FD00CE61F2 /* main.m in Sources */,
-				A104A420181D4525000FE554 /* SCKAuthentication.m in Sources */,
 				66C4B63B1817E13900CD6C51 /* SCKTopViewController.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
-				A104A422181D4525000FE554 /* SCKFacebookAuthentication.m in Sources */,
+				A1EB3231181D4FD1004330B8 /* SCKFacebookAuthentication.m in Sources */,
 				942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */,
 				941AFC7B18154B0E00517557 /* SCKActor.m in Sources */,
 				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
+				A1EB3234181D4FD2004330B8 /* SCKUser.m in Sources */,
 				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
-				A104A421181D4525000FE554 /* SCKUser.m in Sources */,
 				66FE7A5D1817F8A60032DA9E /* SCKUser+CurrentUser.m in Sources */,
 				942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */,
 				661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */,
