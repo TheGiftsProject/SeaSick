@@ -38,6 +38,8 @@
 		94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */; };
 		94F379801815623000CE61F2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3797F1815623000CE61F2 /* CoreMotion.framework */; };
 		B52FE37B181940C500EA90D9 /* Run 4 Your Lives.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B52FE37A181940C500EA90D9 /* Run 4 Your Lives.mp3 */; };
+		B52FE37E181D443100EA90D9 /* SCKScore.m in Sources */ = {isa = PBXBuildFile; fileRef = B52FE37D181D443100EA90D9 /* SCKScore.m */; };
+		B5E2670E181D4DCA00EEA7A6 /* SCKLeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E2670D181D4DCA00EEA7A6 /* SCKLeaderboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		94DBE0EF1815479800E7F595 /* SeaSickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaSickTests.m; sourceTree = "<group>"; };
 		94F3797F1815623000CE61F2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B52FE37A181940C500EA90D9 /* Run 4 Your Lives.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Run 4 Your Lives.mp3"; sourceTree = "<group>"; };
+		B52FE37C181D443100EA90D9 /* SCKScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKScore.h; path = Models/SCKScore.h; sourceTree = "<group>"; };
+		B52FE37D181D443100EA90D9 /* SCKScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKScore.m; path = Models/SCKScore.m; sourceTree = "<group>"; };
+		B5E2670C181D4DCA00EEA7A6 /* SCKLeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKLeaderboardViewController.h; sourceTree = "<group>"; };
+		B5E2670D181D4DCA00EEA7A6 /* SCKLeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKLeaderboardViewController.m; sourceTree = "<group>"; };
 		C71AE5989D7F498092069E6E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,8 @@
 				941AFC7D18154B9D00517557 /* SCKBullet.m */,
 				941AFC7F18154BC800517557 /* SCKShip.h */,
 				941AFC8018154BC800517557 /* SCKShip.m */,
+				B52FE37C181D443100EA90D9 /* SCKScore.h */,
+				B52FE37D181D443100EA90D9 /* SCKScore.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -213,6 +221,8 @@
 				66C4B63A1817E13900CD6C51 /* SCKTopViewController.m */,
 				94C786DE18193A6D00C15FE1 /* SCKHealthBar.h */,
 				94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */,
+				B5E2670C181D4DCA00EEA7A6 /* SCKLeaderboardViewController.h */,
+				B5E2670D181D4DCA00EEA7A6 /* SCKLeaderboardViewController.m */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 				66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */,
 				942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */,
 				94F3797C181552FD00CE61F2 /* main.m in Sources */,
+				B52FE37E181D443100EA90D9 /* SCKScore.m in Sources */,
 				66C4B63B1817E13900CD6C51 /* SCKTopViewController.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
 				942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */,
@@ -394,6 +405,7 @@
 				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
 				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
 				942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */,
+				B5E2670E181D4DCA00EEA7A6 /* SCKLeaderboardViewController.m in Sources */,
 				661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

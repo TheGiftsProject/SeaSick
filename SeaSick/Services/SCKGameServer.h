@@ -33,5 +33,6 @@ typedef enum SCKGameServerClientDisconnectType {
 
 - (void) updateShip:(SCKShip *)ship accelerating:(BOOL)accel;
 - (void) shipFired;
++ (void) requestScores:(NSString *)url withBlock:(void (^)(NSArray *scoresResult))block;
 
 @end

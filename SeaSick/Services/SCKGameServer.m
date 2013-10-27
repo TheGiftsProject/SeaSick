@@ -10,6 +10,10 @@
 #import "../Models/SCKShip.h"
 #import "../Models/SCKBullet.h"
 #import <Underscore.h>
+#import <ObjectMapping.h>
+#import <RKResponseDescriptor.h>
+#import <RKObjectRequestOperation.h>
+#import "../Models/SCKScore.h"
 
 @interface SCKGameServer ()
 
@@ -27,7 +31,7 @@
   self = [super init];
   if (self) {
     self.url = url;
-    self.socket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:url]];
+    self.socket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"ws://%@", url]]];
     self.dq = dispatch_queue_create("game server queue", NULL);
     [self.socket setDelegateDispatchQueue:self.dq];
     self.socket.delegate = self;
@@ -119,6 +123,24 @@
   NSDictionary *message = @{@"action": messageId, @"params": messageData};
   NSData *data = [NSJSONSerialization dataWithJSONObject:message options:0 error:&error];
   [self.socket send:data];
+}
+
++ (void)requestScores:(NSString *)url withBlock:(void (^)(NSArray *))block {
+  NSString *reqUrl = [NSString stringWithFormat:@"http://%@/scores", url];
+  NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:reqUrl]];
+  RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[SCKScore class]];
+  [mapping addAttributeMappingsFromDictionary:@{
+                                                @"id":   @"Id",
+                                                @"score":     @"score"
+                                                }];
+  RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping method:RKRequestMethodAny pathPattern:nil keyPath:nil statusCodes:nil];
+  RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:req responseDescriptors:@[responseDescriptor]];
+  
+  [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
+    NSLog(@"The scores: %@", [result array]);
+    block([result array]);
+  } failure:nil];
+  [operation start];
 }
 
 @end

@@ -15,7 +15,11 @@
 #import "MBProgressHUD.h"
 #import "cocos2d.h"
 
-#define GAME_SERVER_URL @"ws://192.168.2.93:8088"
+#ifdef DEBUG
+#define GAME_SERVER_URL @"localhost:8088"
+#else
+#define GAME_SERVER_URL @"seasick.herokuapp.com"
+#endif
 
 #define WHY_NOT YES
 #define HELL_NO NO
@@ -70,7 +74,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"Run 4 Your Lives.mp3" loop:YES];
+  //[[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"Run 4 Your Lives.mp3" loop:YES];
   self.gameServer = [[SCKGameServer alloc] initWithURL:GAME_SERVER_URL];
   [self.gameServer start:self];
   
