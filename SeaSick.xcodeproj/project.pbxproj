@@ -37,7 +37,8 @@
 		94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0D51815479800E7F595 /* SCKViewController.m */; };
 		94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94DBE0CF1815479800E7F595 /* SCKAppDelegate.m */; };
 		94F379801815623000CE61F2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F3797F1815623000CE61F2 /* CoreMotion.framework */; };
-		B52FE37B181940C500EA90D9 /* Run 4 Your Lives.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B52FE37A181940C500EA90D9 /* Run 4 Your Lives.mp3 */; };
+		A144C07C1819597000CAC9D9 /* fired.wav in Resources */ = {isa = PBXBuildFile; fileRef = A144C07A1819597000CAC9D9 /* fired.wav */; };
+		A144C07D1819597000CAC9D9 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A144C07B1819597000CAC9D9 /* background.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +98,8 @@
 		94DBE0ED1815479800E7F595 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		94DBE0EF1815479800E7F595 /* SeaSickTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeaSickTests.m; sourceTree = "<group>"; };
 		94F3797F1815623000CE61F2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		B52FE37A181940C500EA90D9 /* Run 4 Your Lives.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Run 4 Your Lives.mp3"; sourceTree = "<group>"; };
+		A144C07A1819597000CAC9D9 /* fired.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fired.wav; sourceTree = "<group>"; };
+		A144C07B1819597000CAC9D9 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		C71AE5989D7F498092069E6E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,7 +191,8 @@
 		94DBE0C51815479800E7F595 /* SeaSick */ = {
 			isa = PBXGroup;
 			children = (
-				B52FE37A181940C500EA90D9 /* Run 4 Your Lives.mp3 */,
+				A144C07A1819597000CAC9D9 /* fired.wav */,
+				A144C07B1819597000CAC9D9 /* background.mp3 */,
 				941AFC7518154A8000517557 /* Models */,
 				661DCDA1181549A90004EBBB /* Services */,
 				94DBE0CE1815479800E7F595 /* SCKAppDelegate.h */,
@@ -326,9 +329,10 @@
 			files = (
 				94C786E418196D5300C15FE1 /* visitor2.ttf in Resources */,
 				94DBE0CA1815479800E7F595 /* InfoPlist.strings in Resources */,
-				B52FE37B181940C500EA90D9 /* Run 4 Your Lives.mp3 in Resources */,
 				94C786E61819730200C15FE1 /* PressStart2P.ttf in Resources */,
+				A144C07C1819597000CAC9D9 /* fired.wav in Resources */,
 				94DBE0DD1815479800E7F595 /* Images.xcassets in Resources */,
+				A144C07D1819597000CAC9D9 /* background.mp3 in Resources */,
 				94DBE0D31815479800E7F595 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

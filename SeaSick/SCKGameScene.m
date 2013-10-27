@@ -236,22 +236,6 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-
-    [self chooseActionTouchEvent:touch];
-    return YES;
-}
-
-- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    [self chooseActionTouchEvent:touch];
-}
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    self.accelerating = NO;
-}
-
-- (void)chooseActionTouchEvent:(UITouch *)touch
-{
     if ([self inAccelerationArea:touch]) {
         // accelerate
         self.accelerating = TRUE;
@@ -262,6 +246,23 @@
         // fire
         [self.delegate fire];
     }
+    return YES;
+}
+
+- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    if ([self inAccelerationArea:touch]) {
+        // accelerate
+        self.accelerating = TRUE;
+        
+    }
+    else {
+        self.accelerating = NO;
+    }
+}
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    self.accelerating = NO;
 }
 
 @end
