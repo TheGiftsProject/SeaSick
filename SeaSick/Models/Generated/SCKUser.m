@@ -2,7 +2,7 @@
 //  SCKUser.m
 //  SeaSick
 //
-//  Created by Itay Adler on 24/10/2013.
+//  Created by Danni Friedland on 10/27/13.
 //
 //
 

@@ -29,12 +29,12 @@
 }
 - (IBAction)loginClicked:(UIButton *)sender {
   
-  SCKFacebookAuthentication login:^(NSDictionary<FBGraphUser> *user, NSError *error) {
+  [SCKFacebookAuthentication login:^(NSDictionary<FBGraphUser> *user, NSError *error) {
     SCKFacebookAuthentication *authentication = [SCKFacebookAuthentication new];
-    authentication.name = user.name;
+    authentication.name = user[@"name"];
     authentication.email = user[@"email"];
-    authentication.user = [SCKUser createUser];
-  }
+//    authentication.user = [SCKUser createUser];
+  }];
   // this button's job is to flip-flop the session from open to closed
 //  FBSession *activeSession = [FBSession activeSession];
 //  if (activeSession.isOpen) {

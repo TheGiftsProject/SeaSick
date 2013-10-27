@@ -2,7 +2,7 @@
 //  SCKAuthentication.m
 //  SeaSick
 //
-//  Created by Itay Adler on 24/10/2013.
+//  Created by Danni Friedland on 10/27/13.
 //
 //
 
@@ -12,8 +12,8 @@
 
 @implementation SCKAuthentication
 
-@dynamic name;
 @dynamic email;
+@dynamic name;
 @dynamic user;
 
 @end
