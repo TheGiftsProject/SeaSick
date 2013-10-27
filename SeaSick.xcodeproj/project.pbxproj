@@ -15,12 +15,12 @@
 		941AFC7B18154B0E00517557 /* SCKActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7A18154B0E00517557 /* SCKActor.m */; };
 		941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC7D18154B9D00517557 /* SCKBullet.m */; };
 		941AFC8118154BC800517557 /* SCKShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 941AFC8018154BC800517557 /* SCKShip.m */; };
-		942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C161816AAA800D0D375 /* SCKGameScene.m */; };
-		942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C191816B6DA00D0D375 /* SCKShipNode.m */; };
-		942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 942C7C1C1816C37500D0D375 /* SCKBulletNode.m */; };
-		94C786E018193A6D00C15FE1 /* SCKHealthBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */; };
 		94C786E418196D5300C15FE1 /* visitor2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94C786E318196D5300C15FE1 /* visitor2.ttf */; };
 		94C786E61819730200C15FE1 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94C786E5181972FB00C15FE1 /* PressStart2P.ttf */; };
+		94C7D498181D464F0050D2D9 /* SCKBulletNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C7D491181D464F0050D2D9 /* SCKBulletNode.m */; };
+		94C7D499181D464F0050D2D9 /* SCKGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C7D493181D464F0050D2D9 /* SCKGameScene.m */; };
+		94C7D49A181D464F0050D2D9 /* SCKHealthBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C7D495181D464F0050D2D9 /* SCKHealthBar.m */; };
+		94C7D49B181D464F0050D2D9 /* SCKShipNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C7D497181D464F0050D2D9 /* SCKShipNode.m */; };
 		94DBE0BE1815479800E7F595 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BD1815479800E7F595 /* Foundation.framework */; };
 		94DBE0C01815479800E7F595 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0BF1815479800E7F595 /* CoreGraphics.framework */; };
 		94DBE0C21815479800E7F595 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94DBE0C11815479800E7F595 /* UIKit.framework */; };
@@ -67,16 +67,16 @@
 		941AFC7D18154B9D00517557 /* SCKBullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKBullet.m; path = Models/SCKBullet.m; sourceTree = "<group>"; };
 		941AFC7F18154BC800517557 /* SCKShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKShip.h; path = Models/SCKShip.h; sourceTree = "<group>"; };
 		941AFC8018154BC800517557 /* SCKShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKShip.m; path = Models/SCKShip.m; sourceTree = "<group>"; };
-		942C7C151816AAA800D0D375 /* SCKGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKGameScene.h; sourceTree = "<group>"; };
-		942C7C161816AAA800D0D375 /* SCKGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKGameScene.m; sourceTree = "<group>"; };
-		942C7C181816B6DA00D0D375 /* SCKShipNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKShipNode.h; sourceTree = "<group>"; };
-		942C7C191816B6DA00D0D375 /* SCKShipNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKShipNode.m; sourceTree = "<group>"; };
-		942C7C1B1816C37500D0D375 /* SCKBulletNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKBulletNode.h; sourceTree = "<group>"; };
-		942C7C1C1816C37500D0D375 /* SCKBulletNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKBulletNode.m; sourceTree = "<group>"; };
-		94C786DE18193A6D00C15FE1 /* SCKHealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCKHealthBar.h; sourceTree = "<group>"; };
-		94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCKHealthBar.m; sourceTree = "<group>"; };
 		94C786E318196D5300C15FE1 /* visitor2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = visitor2.ttf; sourceTree = "<group>"; };
 		94C786E5181972FB00C15FE1 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
+		94C7D490181D464F0050D2D9 /* SCKBulletNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKBulletNode.h; path = SeaSick/UI/SCKBulletNode.h; sourceTree = "<group>"; };
+		94C7D491181D464F0050D2D9 /* SCKBulletNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKBulletNode.m; path = SeaSick/UI/SCKBulletNode.m; sourceTree = "<group>"; };
+		94C7D492181D464F0050D2D9 /* SCKGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKGameScene.h; path = SeaSick/UI/SCKGameScene.h; sourceTree = "<group>"; };
+		94C7D493181D464F0050D2D9 /* SCKGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKGameScene.m; path = SeaSick/UI/SCKGameScene.m; sourceTree = "<group>"; };
+		94C7D494181D464F0050D2D9 /* SCKHealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKHealthBar.h; path = SeaSick/UI/SCKHealthBar.h; sourceTree = "<group>"; };
+		94C7D495181D464F0050D2D9 /* SCKHealthBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKHealthBar.m; path = SeaSick/UI/SCKHealthBar.m; sourceTree = "<group>"; };
+		94C7D496181D464F0050D2D9 /* SCKShipNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCKShipNode.h; path = SeaSick/UI/SCKShipNode.h; sourceTree = "<group>"; };
+		94C7D497181D464F0050D2D9 /* SCKShipNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCKShipNode.m; path = SeaSick/UI/SCKShipNode.m; sourceTree = "<group>"; };
 		94DBE0BA1815479800E7F595 /* SeaSick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaSick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94DBE0BD1815479800E7F595 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94DBE0BF1815479800E7F595 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -157,6 +157,7 @@
 		94DBE0B11815479800E7F595 = {
 			isa = PBXGroup;
 			children = (
+				94DFCC0A181D45A40086BC5E /* UI */,
 				94DBE0C51815479800E7F595 /* SeaSick */,
 				94DBE0E91815479800E7F595 /* SeaSickTests */,
 				94DBE0BC1815479800E7F595 /* Frameworks */,
@@ -206,16 +207,8 @@
 				94DBE0C61815479800E7F595 /* Supporting Files */,
 				66C4B6361816C5F800CD6C51 /* SCKLoginViewController.h */,
 				66C4B6371816C5F800CD6C51 /* SCKLoginViewController.m */,
-				942C7C151816AAA800D0D375 /* SCKGameScene.h */,
-				942C7C161816AAA800D0D375 /* SCKGameScene.m */,
-				942C7C181816B6DA00D0D375 /* SCKShipNode.h */,
-				942C7C191816B6DA00D0D375 /* SCKShipNode.m */,
-				942C7C1B1816C37500D0D375 /* SCKBulletNode.h */,
-				942C7C1C1816C37500D0D375 /* SCKBulletNode.m */,
 				66C4B6391817E13900CD6C51 /* SCKTopViewController.h */,
 				66C4B63A1817E13900CD6C51 /* SCKTopViewController.m */,
-				94C786DE18193A6D00C15FE1 /* SCKHealthBar.h */,
-				94C786DF18193A6D00C15FE1 /* SCKHealthBar.m */,
 			);
 			path = SeaSick;
 			sourceTree = "<group>";
@@ -247,6 +240,21 @@
 				94DBE0EC1815479800E7F595 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94DFCC0A181D45A40086BC5E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				94C7D490181D464F0050D2D9 /* SCKBulletNode.h */,
+				94C7D491181D464F0050D2D9 /* SCKBulletNode.m */,
+				94C7D492181D464F0050D2D9 /* SCKGameScene.h */,
+				94C7D493181D464F0050D2D9 /* SCKGameScene.m */,
+				94C7D494181D464F0050D2D9 /* SCKHealthBar.h */,
+				94C7D495181D464F0050D2D9 /* SCKHealthBar.m */,
+				94C7D496181D464F0050D2D9 /* SCKShipNode.h */,
+				94C7D497181D464F0050D2D9 /* SCKShipNode.m */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,18 +394,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				94F3797E1815532B00CE61F2 /* SCKAppDelegate.m in Sources */,
-				94C786E018193A6D00C15FE1 /* SCKHealthBar.m in Sources */,
 				94F3797D1815530400CE61F2 /* SCKViewController.m in Sources */,
 				66C4B6381816C5F800CD6C51 /* SCKLoginViewController.m in Sources */,
-				942C7C1A1816B6DA00D0D375 /* SCKShipNode.m in Sources */,
 				94F3797C181552FD00CE61F2 /* main.m in Sources */,
+				94C7D49A181D464F0050D2D9 /* SCKHealthBar.m in Sources */,
 				66C4B63B1817E13900CD6C51 /* SCKTopViewController.m in Sources */,
+				94C7D498181D464F0050D2D9 /* SCKBulletNode.m in Sources */,
+				94C7D499181D464F0050D2D9 /* SCKGameScene.m in Sources */,
 				941AFC8118154BC800517557 /* SCKShip.m in Sources */,
-				942C7C1D1816C37500D0D375 /* SCKBulletNode.m in Sources */,
 				941AFC7B18154B0E00517557 /* SCKActor.m in Sources */,
 				941AFC7818154AA900517557 /* SCKGameState.m in Sources */,
+				94C7D49B181D464F0050D2D9 /* SCKShipNode.m in Sources */,
 				941AFC7E18154B9D00517557 /* SCKBullet.m in Sources */,
-				942C7C171816AAA800D0D375 /* SCKGameScene.m in Sources */,
 				661DCDA4181549F70004EBBB /* SCKGameServer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
