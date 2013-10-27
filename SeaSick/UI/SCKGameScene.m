@@ -120,13 +120,6 @@
 }
 
 
-- (void) updateShipNode:(SCKShipNode *)shipNode fromShip:(SCKShip *)ship
-{
-  shipNode.ship = ship;
-  shipNode.visible = (ship.health > 0);
-  shipNode.position = [self gamePointToCGPoint:ship.position];
-  shipNode.rotation = CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction);
-}
 
 - (void) updateBulletNode:(SCKBulletNode *)bulletNode fromBullet:(SCKBullet *)bullet
 {
@@ -142,8 +135,7 @@
     SCKShipNode *shipNode = self.shipNodes[@(ship.Id)];
     if (!shipNode) {
       NSLog(@"Creating new ship node with id %d", ship.Id);
-      shipNode = [[SCKShipNode alloc] init];
-      [self updateShipNode:shipNode fromShip:ship];
+      shipNode = [[SCKShipNode alloc] initWithShip:ship andScene:self];
       [self.gameLayer addChild:shipNode];
       newDict[@(ship.Id)] = shipNode;
       
@@ -154,7 +146,7 @@
       }
     }
     else {
-      [self updateShipNode:shipNode fromShip:ship];
+      shipNode.ship = ship;
       newDict[@(ship.Id)] = shipNode;
       
       if (ship.Id == self.gameState.playerShipId) {

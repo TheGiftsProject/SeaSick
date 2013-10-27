@@ -27,5 +27,6 @@
 @property (nonatomic) BOOL playerPerspective;
 @property (nonatomic, strong) id<SCKSceneDelegate> delegate;
 
+- (CGPoint) gamePointToCGPoint:(SCKPoint)pt;
 
 @end

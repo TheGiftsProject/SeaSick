@@ -7,17 +7,24 @@
 //
 
 #import "SCKShipNode.h"
+#import "SCKGameScene.h"
 
 #import "cocos2d.h"
 
-@implementation SCKShipNode
 
-- (id)initWithShip:(SCKShip*) ship
+
+@implementation SCKShipNode
 {
-    if (self = [super init]) {
-        self.ship = ship;
-    }
-    return self;
+  BOOL _destroying;
+}
+
+- (id)initWithShip:(SCKShip*) ship andScene:(SCKGameScene *) scene
+{
+  if (self = [super init]) {
+    self.ship = ship;
+    self.scene = scene;
+  }
+  return self;
 }
 
 - (ccColor4B)getColorForHealth:(int)health {
@@ -47,17 +54,60 @@
 
 -(void)draw
 {
-    glLineWidth(2.0f);
+  glLineWidth(2.0f);
+  if (_destroying) {
+    ccDrawColor4B(255, 255, 255, 255);
+    ccDrawLine( ccp(0, 3.0), ccp(0, 6.0) );
+    ccDrawLine( ccp(2, 2), ccp(4, 4) );
+    ccDrawLine( ccp(2, -2), ccp(4, -4) );
+    
+    ccDrawLine( ccp(0, -3), ccp(0, -6) );
+    ccDrawLine( ccp(-2, -2), ccp(-4, -4) );
+    ccDrawLine( ccp(-2, 2), ccp(-4, 4) );
+  }
+  else {
+    
     ccColor4B shipColor = [self getColorForHealth:self.ship.health];
     ccDrawColor4B(shipColor.r, shipColor.g, shipColor.b, shipColor.a); // you suck, cc
     
-    
-   
     ccDrawLine( ccp(0, -1.0), ccp(-4.0,-8.0) );
     ccDrawLine( ccp(-4.0, -8.0), ccp(0, 8.0) );
     ccDrawLine( ccp(0, 8.0), ccp(4.0, -8.0) );
     ccDrawLine( ccp(4.0, -8.0), ccp(0,-1.0) );
+  }
 }
+
+-(void)respawn
+{
+  self.visible = YES;
+}
+
+-(void)destroy
+{
+  // Poof!
+  _destroying = YES;
+ [self scheduleOnce:@selector(destroyed) delay:0.5f];
+}
+
+- (void) destroyed
+{
+  _destroying = NO;
+  self.visible = NO;
+}
+
+- (void)setShip:(SCKShip *)ship
+{
+  _ship = ship;
+  if (self.visible && self.ship.health == 0) {
+    [self destroy];
+  }
+  else if (!self.visible && ship.health != 0) {
+    [self respawn];
+  }
+  self.position = [self.scene gamePointToCGPoint:ship.position];
+  self.rotation = CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction);
+}
+
 
 
 @end
