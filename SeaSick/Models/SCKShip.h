@@ -14,6 +14,7 @@
 
 @property (nonatomic) int health;
 @property (nonatomic) int score;
+@property (nonatomic) BOOL immune;
 
 +(SCKShip*)fromJSON:(NSDictionary *)json;
 +(NSArray*)fromJSONArray:(NSArray *)jsonArray;

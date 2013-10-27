@@ -11,11 +11,15 @@
 
 #import "cocos2d.h"
 
+@interface SCKShipNode()
+@property (nonatomic) BOOL immune;
 
+@end
 
 @implementation SCKShipNode
 {
   BOOL _destroying;
+  BOOL _killed;
 }
 
 - (id)initWithShip:(SCKShip*) ship andScene:(SCKGameScene *) scene
@@ -80,12 +84,14 @@
 -(void)respawn
 {
   self.visible = YES;
+  _killed = NO;
 }
 
 -(void)destroy
 {
   // Poof!
   _destroying = YES;
+  _killed = YES;
  [self scheduleOnce:@selector(destroyed) delay:0.5f];
 }
 
@@ -95,15 +101,41 @@
   self.visible = NO;
 }
 
+- (void)setImmune:(BOOL)immune
+{
+  if (_immune != immune) {
+    if (immune) {
+      [self schedule:@selector(flash) interval:0.1f];
+    }
+    else {
+      [self unschedule:@selector(flash)];
+      self.visible = YES;
+    }
+  }
+  
+  _immune = immune;
+}
+
+- (void)flash
+{
+  self.visible = !self.visible;
+}
+
 - (void)setShip:(SCKShip *)ship
 {
   _ship = ship;
-  if (self.visible && self.ship.health == 0) {
+
+  self.immune = ship.immune;
+
+  if (!_killed && self.ship.health == 0) {
     [self destroy];
   }
-  else if (!self.visible && ship.health != 0) {
+  else if (_killed && ship.health != 0) {
     [self respawn];
   }
+
+  
+
   self.position = [self.scene gamePointToCGPoint:ship.position];
   self.rotation = CC_RADIANS_TO_DEGREES(M_PI_2 - ship.direction);
 }

@@ -15,7 +15,8 @@
   s.Id = [((NSString*)ship[@"id"]) integerValue];
   s.score = [((NSString*)ship[@"score"]) integerValue];
   s.health = [((NSString*)ship[@"health"]) integerValue];
-    s.direction =[((NSString*)ship[@"direction"]) floatValue];
+  s.immune = [ship[@"immune"] boolValue];
+  s.direction =[((NSString*)ship[@"direction"]) floatValue];
   NSArray *velArr = (NSArray*)ship[@"velocity"];
   NSArray *posArr = (NSArray*)ship[@"position"];
   SCKPoint vel;
@@ -38,12 +39,13 @@
 
 -(NSDictionary*)toJSONDictionary {
   NSMutableDictionary *dict = [NSMutableDictionary new];
-    dict[@"id"] = @(self.Id);
-    dict[@"score"] = @(self.score);
-    dict[@"health"] = @(self.health);
-    dict[@"velocity"] = @[@(self.velocity.x), @(self.velocity.y)];
-    dict[@"position"] = @[@(self.position.x), @(self.position.y)];
-    dict[@"direction"] = @(self.direction);
+  dict[@"id"] = @(self.Id);
+  dict[@"score"] = @(self.score);
+  dict[@"health"] = @(self.health);
+  dict[@"velocity"] = @[@(self.velocity.x), @(self.velocity.y)];
+  dict[@"position"] = @[@(self.position.x), @(self.position.y)];
+  dict[@"direction"] = @(self.direction);
+  dict[@"immune"] = @(self.immune);
   return dict;
 }
 
